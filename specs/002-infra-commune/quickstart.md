@@ -1,0 +1,87 @@
+# Quickstart — Valider l'outillage commun sur la page témoin
+
+Ce guide prouve que l'outillage fonctionne avant toute implémentation (US4). C'est la condition pour poser le tag `base-commune`.
+
+## Prérequis
+
+- Node 26 et npm.
+- Git for Windows, pour son Perl, utilisé par `cloc`.
+- OBS, uniquement pour l'étape 5.
+
+```powershell
+cd shared; npm install; npx playwright install chromium; cd ..
+cd apps/temoin; npm install; npm run build; cd ../..
+node shared/assets/build-model.ts      # génère shared/assets/model.glb (une seule fois)
+```
+
+Résultat attendu : `shared/assets/model.glb` pèse moins de 1 Mo, et `apps/temoin/dist/.vite/manifest.json` existe.
+
+## 1. Service de diffusion (US1)
+
+```powershell
+node shared/server/index.ts            # affiche "PRET 8787"
+curl.exe http://127.0.0.1:8787/health  # {"ok":true,"seq":0,"clients":[]}
+```
+
+Les scénarios de l'US1 (bienvenue, rediffusion, liste alternative, rejet d'une valeur invalide, import depuis Node) sont couverts par `shared/e2e/service.spec.ts`, qui fait partie de la suite.
+
+## 2. Suite d'acceptation sur le témoin (US2, US4-1, SC-001)
+
+```powershell
+cd apps/temoin; npm run preview        # dans un terminal séparé : http://localhost:4170
+cd shared; $env:APP_URL="http://localhost:4170"; $env:FRAMEWORK="temoin"; npm run e2e
+```
+
+Résultats attendus :
+- 100 % des tests réussis, dans les deux projets (`standard` et `sans-3d`) ;
+- en moins de 5 minutes (SC-006) ;
+- une entrée `e2e` ajoutée à `results/mesures.json`, avec la liste des scénarios manuels.
+
+## 3. Détection des défauts injectés (US2-4, SC-002)
+
+```powershell
+foreach ($d in "bandeau","score","alerte","reconnexion") { $env:APP_QUERY="defaut=$d"; npm run e2e }
+```
+
+Résultat attendu : chaque campagne a au moins un échec, et c'est le scénario visé qui échoue :
+
+| Défaut | Scénario qui doit échouer |
+| --- | --- |
+| `bandeau` | US2-3 |
+| `score` | US2-2 |
+| `alerte` | US2-4 |
+| `reconnexion` | US2-6 |
+
+Ces campagnes ont `FRAMEWORK=temoin-defaut`. Elles n'entrent donc pas dans le décompte du témoin.
+
+## 4. Mesures sans OBS (US3)
+
+```powershell
+npm run poids  -- --framework temoin
+npm run lignes -- --framework temoin
+# Ouvrir overlay-a.html et overlay-b.html dans deux fenêtres visibles (pas des onglets en arrière-plan), puis :
+npm run latence -- --framework temoin --obs-fps 60
+npm run grille
+```
+
+Résultats attendus :
+- 4 entrées `poids-*` ;
+- une entrée `lignes` ;
+- les entrées `latence-*` avec `valide: true`, et une médiane inférieure à 3 images (SC-003) ;
+- `results/grille.md` généré.
+
+## 5. Mesures dans OBS (US5, SC-007)
+
+Suivre [results/protocole-obs.md](../../results/protocole-obs.md) avec le témoin (une scène « témoin » et ses 3 sources) :
+- `powershell -File shared/bench/cpu.ps1 -Framework reference -Scenario reference -Duration 60` (scène vide) ;
+- puis `-Framework temoin` avec les scénarios `repos`, `alertes` (pendant `npm run alertes`) et `3d` ;
+- puis `npm run fps -- --framework temoin --obs-fps 30`, avec `overlay-3d.html?debug=1` comme source.
+
+Résultats attendus :
+- entrées `cpu-*` et `gpu-*` avec un champ `net` ;
+- entrées `fps-*` ;
+- l'ensemble déroulé en moins de 30 minutes.
+
+## Sortie
+
+Une fois les étapes 2 à 5 au vert, fusionner `002-infra-commune` dans `main`, puis poser le tag `base-commune`.
