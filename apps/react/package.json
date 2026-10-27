@@ -1,0 +1,30 @@
+{
+  "name": "@spike/react",
+  "private": true,
+  "type": "module",
+  "description": "Implémentation React du spike overlays live (specs/003-spike-react)",
+  "scripts": {
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "react": "~19.2.9",
+    "react-dom": "~19.2.9",
+    "three": "^0.186.1",
+    "zustand": "^5.0.16"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@rolldown/plugin-babel": "^0.2.4",
+    "@types/babel__core": "^7.20.5",
+    "@types/react": "~19.2.18",
+    "@types/react-dom": "~19.2",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}
