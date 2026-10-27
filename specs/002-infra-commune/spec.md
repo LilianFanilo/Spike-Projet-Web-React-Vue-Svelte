@@ -35,7 +35,7 @@ Un développeur (humain ou agent IA) qui implémente la spec dans un framework i
 3. **Given** deux clients connectés, **When** l'un envoie une alerte, **Then** les deux la reçoivent.
 4. **Given** le service lancé avec une liste de variables alternative, **When** un client se connecte, **Then** le message de bienvenue contient cette liste alternative.
 5. **Given** une mise à jour invalide (variable inconnue, type incorrect, valeur hors bornes), **When** le service la reçoit, **Then** il l'ignore sans la rediffuser, enregistre un avertissement et ne s'arrête pas.
-6. **Given** les définitions, les types de messages et la sonde, **When** une app de chacun des trois frameworks et un script Node les importent, **Then** l'import fonctionne sans recopie ni étape de build propre à `shared/`.
+6. **Given** les définitions, les types de messages et la sonde, **When** un script Node et une app Vite (le témoin) les importent, **Then** l'import fonctionne sans recopie ni étape de build propre à `shared/`. L'import dans les apps React, Vue et Svelte est confirmé plus tard, quand la suite E2E passe sur chacune.
 
 ---
 

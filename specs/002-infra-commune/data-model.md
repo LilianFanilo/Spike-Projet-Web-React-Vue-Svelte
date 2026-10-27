@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | `id` | string | Unique dans la liste, en minuscules : `[a-z][a-z0-9-]*` |
 | `label` | string | Libellé affiché par le dashboard |
-| `type` | `"text"` \| `"number"` \| `"boolean"` \| `"color"` \| `"speed"` | Détermine le contrôle et la validation |
+| `type` | `"text"` \| `"number"` \| `"boolean"` \| `"color"` \| `"speed"` | Détermine le contrôle et la validation. Correspondance avec les types de la spec gelée : texte = `text`, nombre = `number`, booléen = `boolean`, couleur = `color`, vitesse = `speed`. |
 | `default` | string \| number \| boolean | Doit lui-même respecter les règles de validation |
 | `maxLength` | number? | Uniquement pour `text` |
 | `min`, `max` | number? | Pour `number` et `speed` |
