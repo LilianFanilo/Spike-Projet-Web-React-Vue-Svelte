@@ -103,3 +103,15 @@ Campagnes lancées sur `overlays.spec.ts`, avec `FRAMEWORK=temoin-defaut` :
 | `score` | US2-2 | ✅ US2-2 échoue, ainsi que US2-1, US2-4 et US2-5, qui attendent la valeur du score |
 | `alerte` | US2-4 | ✅ US2-4 et US2-5 échouent |
 | `reconnexion` | US2-6 | ✅ US2-6 échoue (seul échec) |
+
+### 2026-10-27 — Mesures sans OBS (T042, SC-003)
+
+| Mesure | Témoin |
+| --- | --- |
+| Poids gzip (initial) | dashboard 3,32 Ko · overlay A 3,17 Ko · overlay B 3,12 Ko · overlay 3D 3,53 Ko (rien en différé) |
+| Lignes de code | 376 (TypeScript 241, CSS 135) |
+| Latence (200 mises à jour) | médiane **10,6 ms**, p95 **18,1 ms**, **0 % d'accusés perdus** → valide |
+
+- La latence a été mesurée avec les overlays ouverts dans Chromium sans interface. Dans ce mode, `requestAnimationFrame` n'est pas calé sur un écran à 60 Hz, et la médiane (0,64 image « à 60 i/s ») passe sous le plancher théorique de la sonde. **La lecture en images n'a de sens que dans OBS**, où la cadence est fixée.
+- `cpu.ps1` a été validé à blanc, sur un processus Node qui occupe un cœur à 100 % : la mesure donne 8,23 % pour 8,33 % attendus (12 cœurs logiques). Le script échoue explicitement si OBS est absent.
+- `results/grille.md` est généré par `npm run grille`.

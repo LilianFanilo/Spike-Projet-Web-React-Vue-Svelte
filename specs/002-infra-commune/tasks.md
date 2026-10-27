@@ -252,7 +252,7 @@
 
 **Independent Test** : quickstart §4 sur le témoin, c'est-à-dire des entrées `poids-*`, `lignes` et `latence-*` valides, puis `results/grille.md` généré.
 
-- [ ] T035 [P] [US3] Créer `shared/bench/latency.ts` (options `--framework`, `--count 200`, `--interval 100`, `--obs-fps`) :
+- [X] T035 [P] [US3] Créer `shared/bench/latency.ts` (options `--framework`, `--count 200`, `--interval 100`, `--obs-fps`) :
   1. vérifier via `GET /health` que `overlay-a` et `overlay-b` sont connectés ;
   2. `POST /stats/reset` ;
   3. se connecter en `hello {role:"bench"}` ;
@@ -260,33 +260,33 @@
   5. attendre 2500 ms, puis lire `GET /stats` ;
   6. calculer, par overlay, la médiane, le p95 (méthode du rang le plus proche) et le taux d'accusés perdus. Accusés attendus : titre ou score → `overlay-a`, bandeau → `overlay-b` ;
   7. enregistrer `latence-mediane` et `latence-p95` (toutes mesures confondues, avec le détail par overlay), `valide = pertes ≤ 2 %`, `conditions.obsFps`.
-- [ ] T036 [P] [US3] Créer `shared/bench/alerts.ts` (options `--count 10`, `--interval 3000`) : se connecter en `bench`, envoyer les alertes, afficher la progression. Rien n'est enregistré.
-- [ ] T037 [P] [US3] Créer `shared/bench/sizes.ts` (option `--framework`) :
+- [X] T036 [P] [US3] Créer `shared/bench/alerts.ts` (options `--count 10`, `--interval 3000`) : se connecter en `bench`, envoyer les alertes, afficher la progression. Rien n'est enregistré.
+- [X] T037 [P] [US3] Créer `shared/bench/sizes.ts` (option `--framework`) :
   - lire `apps/<fw>/dist/.vite/manifest.json`, avec une erreur explicite si le fichier est absent (« activer build.manifest ») ;
   - pour chaque entrée `dashboard.html`, `overlay-a.html`, `overlay-b.html` et `overlay-3d.html`, faire la somme gzip (`zlib.gzipSync`) du HTML de `dist`, du `file`, des `imports` (récursifs, dédupliqués) et des `css` de tous ces chunks ;
   - calculer à part les `dynamicImports` (récursifs) ;
   - exclure les `.glb` ;
   - enregistrer `poids-<page>` en Ko (2 décimales), avec `details {differeKo, fichiers}`.
-- [ ] T038 [P] [US3] Créer `shared/bench/fps.ts` (options `--framework`, `--duration 60`, `--obs-fps`) :
+- [X] T038 [P] [US3] Créer `shared/bench/fps.ts` (options `--framework`, `--duration 60`, `--obs-fps`) :
   1. vérifier que `overlay-3d` est connecté ;
   2. `POST /stats/reset` ;
   3. attendre `duration` ;
   4. lire les FPS de `overlay-3d`, en ignorant le premier échantillon ;
   5. enregistrer `fps-min` et `fps-moyen`, avec `details {plafond, ratio}`.
-- [ ] T039 [P] [US3] Créer `shared/bench/cloc.ts` (option `--framework`) :
+- [X] T039 [P] [US3] Créer `shared/bench/cloc.ts` (option `--framework`) :
   - lancer `C:\Program Files\Git\usr\bin\perl.exe` sur `shared/node_modules/cloc/lib/cloc` avec `--json apps/<fw>/src` (chemin de Perl modifiable via `PERL_PATH`) ;
   - enregistrer `lignes` = `SUM.code`, avec le détail par langage. Erreur explicite si Perl est introuvable.
-- [ ] T040 [P] [US3] Créer `shared/bench/cpu.ps1` (paramètres `-Framework`, `-Scenario reference|repos|alertes|3d`, `-Duration 60`, `-ObsFps`, `-Acceleration on|off`), compatible PowerShell 5.1 :
+- [X] T040 [P] [US3] Créer `shared/bench/cpu.ps1` (paramètres `-Framework`, `-Scenario reference|repos|alertes|3d`, `-Duration 60`, `-ObsFps`, `-Acceleration on|off`), compatible PowerShell 5.1 :
   - fixer `$OutputEncoding = [Text.UTF8Encoding]::new($false)` en tête du script, pour que l'entrée standard transmise à Node soit en UTF-8 ;
   - échouer si aucun processus `obs64` n'existe ;
   - toutes les secondes, pendant `Duration` : interroger `Win32_PerfFormattedData_PerfProc_Process` avec `Name` = `obs64` ou `Name` qui commence par `obs-browser-page`, et sommer `PercentProcessorTime` divisé par `NumberOfLogicalProcessors` ;
   - au même rythme, sommer `UtilizationPercentage` de `Win32_PerfFormattedData_GPUPerformanceCounters_GPUEngine` dont le `Name` contient `pid_<un PID retenu>_` et `engtype_3D` ;
   - calculer la moyenne et le maximum, puis envoyer deux entrées JSON (`cpu-<scenario>` et `gpu-<scenario>`, avec le framework `reference` si le scénario est `reference`) à `node shared/bench/record.ts` sur l'entrée standard, avec les conditions `obsFps` et `accelerationMaterielle`.
-- [ ] T041 [US3] Créer `shared/bench/grille.ts` :
+- [X] T041 [US3] Créer `shared/bench/grille.ts` :
   - lire `results/mesures.json` et, pour chaque couple (framework, mesure), retenir la dernière entrée valide, en ignorant `temoin-defaut` ;
   - générer `results/grille.md` : un tableau dont les lignes suivent la grille du document de spike (critères validés, poids 2D et 3D, CPU et GPU nets, FPS min ÷ plafond, latences médiane et p95, lignes, nombre de passages E2E avant le vert) et les colonnes sont React, Vue, Svelte et témoin ;
   - mettre « — » pour une valeur absente, et rappeler en bas de page que la latence ne couvre que le trajet du service à l'overlay.
-- [ ] T042 [US3] Dérouler le quickstart §4 sur le témoin : poids, lignes, latence (deux fenêtres visibles), puis grille. Vérifier que la latence est valide et que la médiane est inférieure à 3 images (SC-003). Noter le résultat dans « Résultats de validation » de `quickstart.md`.
+- [X] T042 [US3] Dérouler le quickstart §4 sur le témoin : poids, lignes, latence (deux fenêtres visibles), puis grille. Vérifier que la latence est valide et que la médiane est inférieure à 3 images (SC-003). Noter le résultat dans « Résultats de validation » de `quickstart.md`.
 
 **Checkpoint** : toutes les mesures automatiques fonctionnent sur le témoin.
 

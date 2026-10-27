@@ -279,6 +279,186 @@
           "standard"
         ]
       }
+    },
+    {
+      "id": "2026-10-27T20:12:28.195Z-poids-dashboard-temoin",
+      "framework": "temoin",
+      "mesure": "poids-dashboard",
+      "valeur": 3.32,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-27T20:12:28.195Z",
+      "conditions": {
+        "commit": "9221803"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "dashboard.html",
+          "assets/dashboard-CAAj6sdE.js",
+          "assets/client-D6fCpMzP.js",
+          "assets/client-DV86o2aM.css"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-27T20:12:28.269Z-poids-overlay-a-temoin",
+      "framework": "temoin",
+      "mesure": "poids-overlay-a",
+      "valeur": 3.17,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-27T20:12:28.269Z",
+      "conditions": {
+        "commit": "9221803"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-a.html",
+          "assets/overlay-a-qZSl_xSX.js",
+          "assets/alerte-DJ38eLzz.js",
+          "assets/client-D6fCpMzP.js",
+          "assets/client-DV86o2aM.css"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-27T20:12:28.359Z-poids-overlay-b-temoin",
+      "framework": "temoin",
+      "mesure": "poids-overlay-b",
+      "valeur": 3.12,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-27T20:12:28.359Z",
+      "conditions": {
+        "commit": "9221803"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-b.html",
+          "assets/overlay-b-CE4eNxD4.js",
+          "assets/alerte-DJ38eLzz.js",
+          "assets/client-D6fCpMzP.js",
+          "assets/client-DV86o2aM.css"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-27T20:12:28.428Z-poids-overlay-3d-temoin",
+      "framework": "temoin",
+      "mesure": "poids-overlay-3d",
+      "valeur": 3.53,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-27T20:12:28.428Z",
+      "conditions": {
+        "commit": "9221803"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-3d.html",
+          "assets/overlay-3d-DYR1ES9E.js",
+          "assets/alerte-DJ38eLzz.js",
+          "assets/client-D6fCpMzP.js",
+          "assets/client-DV86o2aM.css"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-27T20:12:30.250Z-lignes-temoin",
+      "framework": "temoin",
+      "mesure": "lignes",
+      "valeur": 376,
+      "unite": "lignes",
+      "valide": true,
+      "horodatage": "2026-10-27T20:12:30.250Z",
+      "conditions": {
+        "commit": "9221803"
+      },
+      "details": {
+        "parLangage": {
+          "TypeScript": 241,
+          "CSS": 135
+        },
+        "fichiers": 7
+      }
+    },
+    {
+      "id": "2026-10-27T20:13:07.828Z-latence-mediane-temoin",
+      "framework": "temoin",
+      "mesure": "latence-mediane",
+      "valeur": 10.62,
+      "unite": "ms",
+      "valide": true,
+      "horodatage": "2026-10-27T20:13:07.828Z",
+      "conditions": {
+        "commit": "9221803",
+        "obsFps": 60,
+        "count": 200,
+        "interval": 100
+      },
+      "details": {
+        "parOverlay": {
+          "overlay-a": {
+            "mediane": 10.8,
+            "p95": 18.44,
+            "recus": 133,
+            "attendus": 133,
+            "perte": 0
+          },
+          "overlay-b": {
+            "mediane": 10.24,
+            "p95": 18.12,
+            "recus": 67,
+            "attendus": 67,
+            "perte": 0
+          }
+        },
+        "perte": 0,
+        "echantillons": 200
+      }
+    },
+    {
+      "id": "2026-10-27T20:13:07.883Z-latence-p95-temoin",
+      "framework": "temoin",
+      "mesure": "latence-p95",
+      "valeur": 18.12,
+      "unite": "ms",
+      "valide": true,
+      "horodatage": "2026-10-27T20:13:07.883Z",
+      "conditions": {
+        "commit": "9221803",
+        "obsFps": 60,
+        "count": 200,
+        "interval": 100
+      },
+      "details": {
+        "parOverlay": {
+          "overlay-a": {
+            "mediane": 10.8,
+            "p95": 18.44,
+            "recus": 133,
+            "attendus": 133,
+            "perte": 0
+          },
+          "overlay-b": {
+            "mediane": 10.24,
+            "p95": 18.12,
+            "recus": 67,
+            "attendus": 67,
+            "perte": 0
+          }
+        },
+        "perte": 0,
+        "echantillons": 200
+      }
     }
   ]
 }
