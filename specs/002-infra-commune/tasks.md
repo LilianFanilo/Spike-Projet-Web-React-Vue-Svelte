@@ -89,7 +89,7 @@
 
 **Independent Test** : `node shared/server/index.ts` affiche `PRET 8787`. Puis `shared/e2e/service.spec.ts` passe (bienvenue, rediffusion avec `seq`, alerte, liste alternative, rejet d'une valeur invalide, import depuis Node).
 
-- [ ] T009 [US1] Créer `shared/server/index.ts` selon `contracts/service.md`.
+- [X] T009 [US1] Créer `shared/server/index.ts` selon `contracts/service.md`.
   - **Options** : `--vars` (par défaut `shared/variables.json`, résolu par rapport au fichier) et `--port` (par défaut 8787). Valider chaque `default` avec `validate`, et s'arrêter avec le code 1 en cas d'erreur.
   - **Serveur** : HTTP et `WebSocketServer` de `ws` sur le même serveur, écoute sur `127.0.0.1`.
   - **Messages** : `hello` mémorise le rôle et le nom puis répond `welcome` ; `set` valide, normalise, incrémente `seq`, met à jour l'état, enregistre `sent {seq,id,at}` et diffuse `update` à tous ; `alert` incrémente `seq` puis diffuse `alert {seq}` ; `ack` enregistre une latence (premier ack par couple `(seq, overlay)` seulement, `seq` inconnue ignorée) ; `fps` est enregistré.
@@ -97,15 +97,15 @@
   - **Routes HTTP** : `GET /health`, `GET /stats`, `POST /stats/reset` (204) ; tout le reste → 404.
   - **Démarrage** : écrire `PRET <port>` sur la sortie standard. `EADDRINUSE` → message explicite et code 1.
   - **Arrêt** : `SIGINT` / `SIGTERM` → fermeture propre, code 0.
-- [ ] T010 [P] [US1] Créer `shared/probe.ts` qui exporte `createProbe(overlay, send)` et sa méthode `track(seq, def, value)`, selon `contracts/protocole.md` et le choix R4 de research.md :
+- [X] T010 [P] [US1] Créer `shared/probe.ts` qui exporte `createProbe(overlay, send)` et sa méthode `track(seq, def, value)`, selon `contracts/protocole.md` et le choix R4 de research.md :
   - si aucun `[data-var="<id>"]` n'existe, ne rien faire ;
   - sinon, vérifier à chaque `requestAnimationFrame` que `data-value` vaut `serialize(def.type, value)`, attendre une image de plus, puis envoyer `{type:"ack", seq, overlay}` ;
   - abandonner au bout de 2000 ms.
-- [ ] T011 [P] [US1] Créer `shared/fps.ts` qui exporte `startFps(overlay, send)` :
+- [X] T011 [P] [US1] Créer `shared/fps.ts` qui exporte `startFps(overlay, send)` :
   - compter les `requestAnimationFrame` par fenêtre de 1 s ;
   - créer un `<div data-fps>` en position fixe en haut à gauche (texte blanc sur fond semi-opaque) qui affiche la valeur ;
   - envoyer `{type:"fps", overlay, value}` chaque seconde.
-- [ ] T012 [US1] Créer `shared/client.ts` qui exporte `connect(options)`, selon `contracts/protocole.md` et le choix R3 de research.md :
+- [X] T012 [US1] Créer `shared/client.ts` qui exporte `connect(options)`, selon `contracts/protocole.md` et le choix R3 de research.md :
   - **Connexion** : `WebSocket` natif vers `WS_URL`, puis `hello` à l'ouverture.
   - **Reconnexion** : toutes les 1000 ms si `reconnect` n'est pas `false`. `onStatus(true/false)` à chaque changement.
   - **Messages reçus** : `welcome` → mémoriser les définitions et appeler `onWelcome` ; `update` → `onUpdate`, puis `probe.track` si `name` est fourni ; `alert` → `onAlert`.
@@ -113,7 +113,7 @@
   - **Valeur de retour** : `{ set, alert, close }`. `set` et `alert` sont sans effet si le client est déconnecté.
 
   Le module doit pouvoir être importé sous Node sans planter : pas d'accès à `window` au moment de l'import.
-- [ ] T013 [US1] Créer `shared/e2e/fixtures.ts` :
+- [X] T013 [US1] Créer `shared/e2e/fixtures.ts` :
   - **Fixture Playwright `serveur`** (portée : un test). Elle lance `node shared/server/index.ts` en processus enfant, attend `PRET`, et expose :
     - `start({ vars? })`, `stop()`, `restart({ vars? })` ;
     - `client()` : un client de test basé sur le `WebSocket` natif de Node, avec `hello {role:"test"}`, `set`, `alert`, `messages[]` et `waitFor(predicate, timeout)` ;
@@ -122,12 +122,12 @@
     Elle arrête le processus en fin de test.
   - **Helper `pageUrl(name, extraQuery?)`** : il construit `${APP_URL}/${name}.html` en ajoutant `APP_QUERY` et `extraQuery`.
   - **Échec explicite** si `APP_URL` ou `FRAMEWORK` manque. Exception : `service.spec.ts`, qui n'a pas besoin de `APP_URL`.
-- [ ] T014 [US1] Créer `shared/e2e/playwright.config.ts` :
+- [X] T014 [US1] Créer `shared/e2e/playwright.config.ts` :
   - `testDir` sur ce dossier, `workers: 1`, `fullyParallel: false`, `retries: 0`, `timeout: 30000`, viewport 1920×1080 ;
   - les reporters `list` et `./mesures-reporter.ts` ;
   - le projet `standard` : `launchOptions.args` `["--use-angle=swiftshader", "--enable-unsafe-swiftshader"]` et `grepInvert: /@repli/` ;
   - le projet `sans-3d` : `args` `["--disable-3d-apis"]` et `grep: /@repli/`.
-- [ ] T015 [US1] Créer `shared/e2e/service.spec.ts`, qui couvre les scénarios US1-1 à US1-6 de cette feature (titres préfixés `SOCLE-1` à `SOCLE-6`) :
+- [X] T015 [US1] Créer `shared/e2e/service.spec.ts`, qui couvre les scénarios US1-1 à US1-6 de cette feature (titres préfixés `SOCLE-1` à `SOCLE-6`) :
   - bienvenue avec 5 définitions et leurs valeurs ;
   - rediffusion d'un `update` avec `seq` aux 2 clients ;
   - rediffusion d'une alerte ;
@@ -220,7 +220,7 @@
   - dashboard : `maxlength=80` sur le titre (saisir 100 caractères donne 80), `min`, `max` et `step` sur le score et la vitesse ;
   - deux dashboards → une modification dans l'un apparaît dans l'autre ;
   - échec du chargement du modèle (`page.route("**/*.glb", r => r.abort())`) → repli `@repli` affiché, en projet `standard`. Ce test-là est titré sans `@repli`, mais vérifie le repli.
-- [ ] T030 [US2] Créer `shared/e2e/manuels.ts` : la liste des scénarios non automatisables, avec la raison de chacun.
+- [X] T030 [US2] Créer `shared/e2e/manuels.ts` : la liste des scénarios non automatisables, avec la raison de chacun.
   - SC-002 de la spec gelée : découverte en moins d'une minute.
   - Rendu visuel de l'animation : ×1,15 et flash.
   - US2-7 dans OBS : transparence réelle.
@@ -228,12 +228,12 @@
   - US3-2 : teinte visible du modèle.
   - US3-3 : vitesse perçue.
   - US3-4 : saut et 2 tours visibles.
-- [ ] T031 [US2] Créer `shared/bench/record.ts` :
+- [X] T031 [US2] Créer `shared/bench/record.ts` :
   - `record(entree)` ajoute l'entrée à `results/mesures.json` (chemin résolu depuis le fichier), en créant `{version:1, entrees:[]}` si besoin. Écriture atomique : fichier `.tmp`, puis `renameSync` ;
   - il calcule `id`, `horodatage` et `conditions.commit` (`git rev-parse --short HEAD`) ;
   - pour les mesures `cpu-*` et `gpu-*` hors référence, `net` = `valeur` − dernière entrée valide `cpu-reference` / `gpu-reference` ;
   - mode ligne de commande : lancé directement, il lit une entrée JSON sur l'entrée standard et l'enregistre.
-- [ ] T032 [US2] Créer `shared/e2e/mesures-reporter.ts` (reporter Playwright). À `onEnd`, il appelle `record()` de `shared/bench/record.ts` avec :
+- [X] T032 [US2] Créer `shared/e2e/mesures-reporter.ts` (reporter Playwright). À `onEnd`, il appelle `record()` de `shared/bench/record.ts` avec :
   - `framework = FRAMEWORK` ;
   - `mesure: "e2e"`, `valeur` = nombre de réussis, `unite: "tests"` ;
   - `details: { echoues, listeEchecs (titres), manuels (de manuels.ts), dureeMs, projets }`.
