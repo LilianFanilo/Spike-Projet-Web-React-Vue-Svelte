@@ -115,3 +115,19 @@ Campagnes lancées sur `overlays.spec.ts`, avec `FRAMEWORK=temoin-defaut` :
 - La latence a été mesurée avec les overlays ouverts dans Chromium sans interface. Dans ce mode, `requestAnimationFrame` n'est pas calé sur un écran à 60 Hz, et la médiane (0,64 image « à 60 i/s ») passe sous le plancher théorique de la sonde. **La lecture en images n'a de sens que dans OBS**, où la cadence est fixée.
 - `cpu.ps1` a été validé à blanc, sur un processus Node qui occupe un cœur à 100 % : la mesure donne 8,23 % pour 8,33 % attendus (12 cœurs logiques). Le script échoue explicitement si OBS est absent.
 - `results/grille.md` est généré par `npm run grille`.
+
+### 2026-10-27 — Mesures dans OBS (T044, SC-007)
+
+OBS à 30 i/s, accélération matérielle des sources navigateur activée, scènes « Référence », « témoin 2D », « témoin 3D » et « témoin FPS ».
+
+| Mesure | Brut | Net |
+| --- | --- | --- |
+| CPU / GPU de référence (scène vide) | 0,73 % / 0,78 % | — |
+| CPU / GPU au repos (2D) | 0,65 % / 2,95 % | −0,08 (bruit) / 2,17 |
+| CPU / GPU pendant 10 alertes | 2,27 % / 8,3 % | **1,54** / 7,52 |
+| CPU / GPU de l'overlay 3D | 1,69 % / 12,33 % | **0,96** / **11,55** |
+| FPS de la 3D (`debug=1`) | min 30, moyenne 30 | ratio min/plafond **1,0** |
+| Latence (dans OBS) | médiane **27 ms**, p95 **56 ms** | 0 % d'accusés perdus |
+
+- Durée : configuration d'OBS guidée (première utilisation), puis environ 6 min de mesures. Le guide « Repères dans OBS » et le tableau de contrôle des scènes ont été ajoutés à `results/protocole-obs.md`, car le protocole supposait qu'on connaissait déjà OBS.
+- **Constat qui touche le barème** : dans OBS à 30 i/s, la latence médiane vaut 0,81 image, sous le plancher d'environ 1,5 image supposé par `results/bareme.md`. Les seuils exprimés en images sont donc trop larges. Par ailleurs, la 3D témoin, qui ne fait qu'effacer l'écran à la couleur choisie, coûte déjà 12,5 % (CPU et GPU nets). Les seuils absolus de la 3D écraseraient donc les écarts entre frameworks. Ces deux points sont soumis à Lilian avant toute mesure d'un framework.

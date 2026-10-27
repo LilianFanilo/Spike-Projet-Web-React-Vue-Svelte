@@ -459,6 +459,278 @@
         "perte": 0,
         "echantillons": 200
       }
+    },
+    {
+      "id": "2026-10-27T20:39:29.706Z-cpu-reference-reference",
+      "framework": "reference",
+      "mesure": "cpu-reference",
+      "valeur": 0.73,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-27T20:39:29.706Z",
+      "conditions": {
+        "commit": "111983e",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 2.92,
+        "echantillons": 60
+      }
+    },
+    {
+      "id": "2026-10-27T20:39:29.762Z-gpu-reference-reference",
+      "framework": "reference",
+      "mesure": "gpu-reference",
+      "valeur": 0.78,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-27T20:39:29.762Z",
+      "conditions": {
+        "commit": "111983e",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 3,
+        "echantillons": 60
+      }
+    },
+    {
+      "id": "2026-10-27T20:41:09.928Z-cpu-repos-temoin",
+      "framework": "temoin",
+      "mesure": "cpu-repos",
+      "valeur": 0.65,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-27T20:41:09.928Z",
+      "conditions": {
+        "commit": "111983e",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 1.92,
+        "echantillons": 60
+      },
+      "net": -0.08
+    },
+    {
+      "id": "2026-10-27T20:41:09.987Z-gpu-repos-temoin",
+      "framework": "temoin",
+      "mesure": "gpu-repos",
+      "valeur": 2.95,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-27T20:41:09.987Z",
+      "conditions": {
+        "commit": "111983e",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 4,
+        "echantillons": 60
+      },
+      "net": 2.17
+    },
+    {
+      "id": "2026-10-27T20:41:42.388Z-cpu-alertes-temoin",
+      "framework": "temoin",
+      "mesure": "cpu-alertes",
+      "valeur": 2.27,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-27T20:41:42.388Z",
+      "conditions": {
+        "commit": "111983e",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 30
+      },
+      "details": {
+        "max": 6.67,
+        "echantillons": 30
+      },
+      "net": 1.54
+    },
+    {
+      "id": "2026-10-27T20:41:42.443Z-gpu-alertes-temoin",
+      "framework": "temoin",
+      "mesure": "gpu-alertes",
+      "valeur": 8.3,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-27T20:41:42.443Z",
+      "conditions": {
+        "commit": "111983e",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 30
+      },
+      "details": {
+        "max": 12,
+        "echantillons": 30
+      },
+      "net": 7.52
+    },
+    {
+      "id": "2026-10-27T20:42:10.119Z-latence-mediane-temoin",
+      "framework": "temoin",
+      "mesure": "latence-mediane",
+      "valeur": 27.05,
+      "unite": "ms",
+      "valide": true,
+      "horodatage": "2026-10-27T20:42:10.119Z",
+      "conditions": {
+        "commit": "111983e",
+        "obsFps": 30,
+        "count": 200,
+        "interval": 100
+      },
+      "details": {
+        "parOverlay": {
+          "overlay-a": {
+            "mediane": 32.37,
+            "p95": 57.91,
+            "recus": 133,
+            "attendus": 133,
+            "perte": 0
+          },
+          "overlay-b": {
+            "mediane": 18.34,
+            "p95": 33.62,
+            "recus": 67,
+            "attendus": 67,
+            "perte": 0
+          }
+        },
+        "perte": 0,
+        "echantillons": 200
+      }
+    },
+    {
+      "id": "2026-10-27T20:42:10.173Z-latence-p95-temoin",
+      "framework": "temoin",
+      "mesure": "latence-p95",
+      "valeur": 55.69,
+      "unite": "ms",
+      "valide": true,
+      "horodatage": "2026-10-27T20:42:10.173Z",
+      "conditions": {
+        "commit": "111983e",
+        "obsFps": 30,
+        "count": 200,
+        "interval": 100
+      },
+      "details": {
+        "parOverlay": {
+          "overlay-a": {
+            "mediane": 32.37,
+            "p95": 57.91,
+            "recus": 133,
+            "attendus": 133,
+            "perte": 0
+          },
+          "overlay-b": {
+            "mediane": 18.34,
+            "p95": 33.62,
+            "recus": 67,
+            "attendus": 67,
+            "perte": 0
+          }
+        },
+        "perte": 0,
+        "echantillons": 200
+      }
+    },
+    {
+      "id": "2026-10-27T20:44:04.312Z-cpu-3d-temoin",
+      "framework": "temoin",
+      "mesure": "cpu-3d",
+      "valeur": 1.69,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-27T20:44:04.312Z",
+      "conditions": {
+        "commit": "111983e",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 4.25,
+        "echantillons": 60
+      },
+      "net": 0.96
+    },
+    {
+      "id": "2026-10-27T20:44:04.368Z-gpu-3d-temoin",
+      "framework": "temoin",
+      "mesure": "gpu-3d",
+      "valeur": 12.33,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-27T20:44:04.368Z",
+      "conditions": {
+        "commit": "111983e",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 15,
+        "echantillons": 60
+      },
+      "net": 11.55
+    },
+    {
+      "id": "2026-10-27T20:45:33.859Z-fps-min-temoin",
+      "framework": "temoin",
+      "mesure": "fps-min",
+      "valeur": 30,
+      "unite": "fps",
+      "valide": true,
+      "horodatage": "2026-10-27T20:45:33.859Z",
+      "conditions": {
+        "commit": "111983e",
+        "obsFps": 30
+      },
+      "details": {
+        "plafond": 30,
+        "ratio": 1,
+        "echantillons": 58
+      }
+    },
+    {
+      "id": "2026-10-27T20:45:33.918Z-fps-moyen-temoin",
+      "framework": "temoin",
+      "mesure": "fps-moyen",
+      "valeur": 30,
+      "unite": "fps",
+      "valide": true,
+      "horodatage": "2026-10-27T20:45:33.918Z",
+      "conditions": {
+        "commit": "111983e",
+        "obsFps": 30
+      },
+      "details": {
+        "plafond": 30,
+        "ratio": 1,
+        "echantillons": 58
+      }
     }
   ]
 }

@@ -313,7 +313,7 @@
     6. FPS (scène « FPS », `npm run fps`) ;
   - la commande exacte et l'emplacement du résultat pour chaque étape ;
   - une rubrique « ressenti /5 », à saisir à la main dans le journal.
-- [ ] T044 [US5] Dérouler le protocole avec Lilian sur le témoin (quickstart §5), en le chronométrant. Corriger les étapes peu claires. Noter dans `quickstart.md` la durée réelle et les entrées `cpu-*`, `gpu-*` et `fps-*` obtenues.
+- [X] T044 [US5] Dérouler le protocole avec Lilian sur le témoin (quickstart §5), en le chronométrant. Corriger les étapes peu claires. Noter dans `quickstart.md` la durée réelle et les entrées `cpu-*`, `gpu-*` et `fps-*` obtenues.
 
 **Checkpoint** : les mesures OBS du témoin sont dans la grille.
 

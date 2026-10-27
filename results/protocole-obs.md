@@ -20,9 +20,20 @@ Toutes les commandes se lancent depuis `shared/`, dans un terminal PowerShell. L
 | Vue | 4174 | `http://localhost:4174/` |
 | Svelte | 4175 | `http://localhost:4175/` |
 
+## Repères dans OBS (première utilisation)
+
+- Au premier lancement, OBS propose un **assistant de configuration automatique** : clique sur **Annuler**.
+- Au centre de la fenêtre se trouve l'**aperçu** (le rectangle noir), c'est-à-dire ce qui serait diffusé.
+- En bas se trouvent plusieurs panneaux. Ceux qui servent ici sont **Scènes** (à gauche), **Sources** (à côté) et **Commandes** (à droite, avec le bouton **Paramètres**, aussi accessible par **Fichier > Paramètres**).
+- **Rendre une scène active** : clic sur son nom dans le panneau **Scènes**. L'aperçu l'affiche aussitôt.
+- **Ajouter une page web à une scène** :
+  1. sélectionner la scène ;
+  2. dans le panneau **Sources**, cliquer sur **+**, choisir **Navigateur**, puis **Créer une nouvelle source** ;
+  3. donner un nom, puis **OK**. La fenêtre des propriétés s'ouvre (réglages en section 2), **Fichier local** doit rester décoché.
+
 ## 1. Réglages d'OBS (une seule fois, à garder identiques ensuite)
 
-1. **Paramètres > Avancé > Sources** : cocher **« Activer l'accélération matérielle des sources navigateur »**, puis **redémarrer OBS**.
+1. **Paramètres > Avancé > Sources** (« Avancé » est en bas de la liste de gauche) : cocher **« Activer l'accélération matérielle des sources navigateur »**, cliquer sur **Appliquer** puis **OK**, et **fermer puis rouvrir OBS**.
 2. **Paramètres > Vidéo** :
    - résolution de base et de sortie : 1920×1080 ;
    - **valeurs FPS communes** : noter la valeur (`30` ou `60`) : `____`. Elle sert de `-ObsFps` / `--obs-fps` à toutes les commandes.
@@ -44,7 +55,19 @@ Créer ces scènes une seule fois. Pour chaque **source navigateur** :
 | `<fw> 3D` | `overlay-3d.html` |
 | `<fw> FPS` | `overlay-3d.html?debug=1` |
 
-Pour changer de framework, il suffit de modifier le port dans les URL des trois scènes, ou de dupliquer les scènes.
+Pour changer de framework, il suffit de modifier le port dans les URL des trois scènes (double-clic sur la source pour rouvrir ses propriétés), ou de dupliquer les scènes.
+
+**Contrôle avant de mesurer** : clique sur chaque scène, l'aperçu doit afficher :
+
+| Scène | Ce qu'on doit voir |
+| --- | --- |
+| `<fw> 2D` | Le titre et le score en haut à gauche, le bandeau rouge « EN DIRECT » en bas |
+| `<fw> 3D` | La scène 3D (témoin : un simple voile bleu semi-transparent) |
+| `<fw> FPS` | La même scène, avec un compteur « xx fps » en haut à gauche |
+
+Pour vérifier la liaison, ouvrir `dashboard.html` dans un navigateur et modifier le titre : il doit changer dans OBS. **Refermer ensuite cet onglet.**
+
+**L'agent sait quelle scène est active** : `GET http://127.0.0.1:8787/health` liste les overlays connectés. Une scène cachée n'en a aucun, grâce à « Arrêter la source lorsqu'elle n'est pas visible ».
 
 ## 3. Déroulé des mesures
 
