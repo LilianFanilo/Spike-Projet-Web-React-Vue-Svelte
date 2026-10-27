@@ -22,6 +22,7 @@ Cette spécification est **unique et indépendante du framework**. Elle est impl
 - Q: Faut-il décrire précisément les animations d'alerte, et par quel moyen les réaliser ? → A: Le rendu visuel est décrit précisément et doit être identique pour les trois frameworks (2D : grossissement jusqu'à ×1,15 puis retour, avec flash lumineux, 2 s en ease-out ; 3D : saut de 0,5 unité et 2 tours supplémentaires, 2 s). Chaque framework utilise ses moyens natifs, sans librairie d'animation.
 - Q: Que doit afficher le bandeau de l'overlay B quand il est visible ? → A: Le texte fixe « EN DIRECT ».
 - Q: Le dashboard doit-il envoyer chaque modification sans regroupement ni limitation de fréquence ? → A: Oui. Chaque événement de saisie (frappe, position du curseur, changement de valeur) envoie une mise à jour, sans throttle ni debounce.
+- Amendement (avant toute copie par framework, demandé par la spec 002-infra-commune) — Q: Comment les tests automatiques pilotent-ils le dashboard ? → A: Par des attributs de données, comme pour les overlays. Chaque champ est un contrôle de formulaire natif portant `data-var`, le bouton d'alerte porte `data-action="alerte"`, et la racine porte `data-connection="on|off"` (FR-045).
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -168,6 +169,10 @@ Ce contrat est identique pour les trois implémentations. Il permet aux tests d'
 - **FR-042** : Pendant l'animation d'alerte, l'élément racine de chaque overlay DOIT porter `data-alert="on"`, puis `data-alert="off"` une fois revenu à l'état normal.
 - **FR-043** : Chaque overlay DOIT notifier la sonde de latence partagée à chaque message de mise à jour reçu.
 - **FR-044** : Chaque page (dashboard, overlay A, overlay B, overlay 3D) DOIT être une entrée de build distincte, afin que son poids puisse être mesuré séparément.
+- **FR-045** : Le dashboard DOIT exposer le même type de contrat d'observation :
+  - chaque champ est un contrôle de formulaire natif adapté à son type : zone de texte, champ numérique, case à cocher, sélecteur de couleur et curseur. Il porte `data-var="<id>"` et sa valeur courante ;
+  - le bouton d'alerte porte `data-action="alerte"` ;
+  - l'élément racine du dashboard porte `data-connection="on"` quand le dashboard est connecté au service de diffusion, et `data-connection="off"` sinon.
 
 ### Key Entities
 
