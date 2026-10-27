@@ -1,0 +1,7 @@
+[
+  { "id": "titre", "label": "Titre", "type": "text", "default": "Bienvenue sur le live", "maxLength": 80 },
+  { "id": "score", "label": "Score", "type": "number", "default": 0, "min": -999999, "max": 999999, "step": 1 },
+  { "id": "bandeau", "label": "Bandeau visible", "type": "boolean", "default": true },
+  { "id": "couleur", "label": "Couleur du modèle", "type": "color", "default": "#4f8cff" },
+  { "id": "vitesse", "label": "Vitesse de rotation", "type": "speed", "default": 0.25, "min": 0, "max": 2, "step": 0.05 }
+]

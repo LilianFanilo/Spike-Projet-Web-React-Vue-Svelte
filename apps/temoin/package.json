@@ -1,0 +1,14 @@
+{
+  "name": "@spike/temoin",
+  "private": true,
+  "type": "module",
+  "description": "Page témoin sans framework : valide l'outillage commun et sert de référence (specs/002-infra-commune, US4)",
+  "scripts": {
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}

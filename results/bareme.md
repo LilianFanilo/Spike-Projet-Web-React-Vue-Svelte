@@ -1,6 +1,14 @@
-# Barème de conversion des mesures en notes (proposition, à valider avant de mesurer)
+# Barème de conversion des mesures en notes
 
-Ce barème fixe à l'avance comment chaque mesure du spike devient une note sur 5. Il est figé avant la première mesure : on ne l'ajuste pas après avoir vu les résultats.
+Ce barème fixe à l'avance comment chaque mesure du spike devient une note sur 5. Il est figé avant la première mesure d'un framework : on ne l'ajuste pas après avoir vu les résultats.
+
+**Historique**
+- v1 (2026-10-27) : validé par Lilian.
+- v2 (2026-10-27) : recalage validé par Lilian **avant toute mesure d'un framework**, à partir des seules mesures du témoin dans OBS.
+  - **Latence** : les seuils en images supposaient un plancher d'environ 1,5 image, alors que le témoin mesure 0,81 image. Les seuils sont désormais relatifs au témoin.
+  - **Charge 3D** : le témoin seul coûte déjà 12,5 %, ce qui aurait tassé les trois frameworks. Les seuils sont désormais relatifs au meilleur des trois.
+
+  Les autres seuils sont inchangés.
 
 ## Règles générales
 
@@ -8,7 +16,6 @@ Ce barème fixe à l'avance comment chaque mesure du spike devient une note sur 
 - **Seuils absolus** quand une valeur cible existe (poids, CPU, FPS). **Seuils relatifs au meilleur des trois** quand seule la comparaison a un sens (lignes de code, temps).
 - Si un framework ne valide pas 100 % des tests d'acceptation E2E, chaque critère touché par le test en échec est plafonné à 2.
 - **Écosystème éditeur (20 %)** et **Intégration desktop (5 %)** ne sont pas re-notés : le spike ne les teste pas, ils gardent leur note issue des recherches.
-- `F` désigne la durée d'une image dans OBS (33,3 ms à 30 i/s, 16,7 ms à 60 i/s), relevée au moment des mesures.
 - « CPU net » désigne le CPU d'OBS et de ses processus `obs-browser-page`, moins la référence mesurée sur une scène vide, en % du CPU total de la machine.
 
 ## Performance des overlays (20 %)
@@ -24,18 +31,24 @@ Le CPU pèse le double du poids : c'est le vrai coût pour le streamer.
 
 | Sous-mesure | Poids | 5 | 4 | 3 | 2 | 1 |
 | --- | --- | --- | --- | --- | --- | --- |
-| Latence médiane serveur → overlay peint | 1/2 | ≤ 1,75 F | ≤ 2,25 F | ≤ 3 F | ≤ 4 F | > 4 F |
-| Latence p95 | 1/2 | ≤ 2,25 F | ≤ 3 F | ≤ 4 F | ≤ 6 F | > 6 F |
+La latence est notée **par rapport au témoin sans framework**, mesuré dans les mêmes conditions (OBS, même cadence). Le ratio mesure donc le surcoût du framework.
 
-Plancher théorique de la sonde : elle attend le prochain `requestAnimationFrame` (0,5 F en moyenne), puis une image de plus pour que la mise à jour soit peinte. Une médiane d'environ 1,5 F correspond donc à une mise à jour appliquée dès l'image suivante. Les seuils 5/4 sont calés sur ce plancher.
+| Sous-mesure | Poids | 5 | 4 | 3 | 2 | 1 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Latence médiane ÷ médiane du témoin | 1/2 | ≤ 1,25 | ≤ 1,5 | ≤ 2 | ≤ 3 | > 3 |
+| Latence p95 ÷ p95 du témoin | 1/2 | ≤ 1,25 | ≤ 1,5 | ≤ 2 | ≤ 3 | > 3 |
+
+Référence témoin (OBS à 30 i/s, 2026-10-27) : médiane 27,05 ms, p95 55,69 ms. Si la cadence d'OBS change, le témoin est remesuré dans la même session que les frameworks.
 
 ## Intégration 3D (15 %)
 
 | Sous-mesure | Poids | 5 | 4 | 3 | 2 | 1 |
 | --- | --- | --- | --- | --- | --- | --- |
 | FPS minimum ÷ plafond OBS | 1/3 | ≥ 0,95 | ≥ 0,90 | ≥ 0,80 | ≥ 0,60 | < 0,60 |
-| CPU + GPU net de l'overlay 3D sur 1 min (%) | 1/3 | ≤ 5 | ≤ 10 | ≤ 15 | ≤ 25 | > 25 |
+| CPU + GPU net de l'overlay 3D sur 1 min (%) | 1/3 | Le meilleur des trois obtient 5, puis on retire 1 point par tranche de +25 % au-delà du meilleur (minimum 1) |
 | Ressenti 3D (ta note /5) | 1/3 | note reprise telle quelle |
+
+La charge 3D est relative au meilleur des trois frameworks, et non au témoin : la 3D témoin n'a ni modèle ni Three.js, elle n'est donc pas comparable. À titre indicatif, elle coûte 12,5 % (CPU 0,96 + GPU 11,55).
 
 Le poids de l'overlay 3D est relevé mais n'est pas noté, car Three.js domine la taille. Il apparaît dans la recommandation.
 

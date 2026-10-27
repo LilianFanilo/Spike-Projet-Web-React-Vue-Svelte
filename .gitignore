@@ -3,3 +3,9 @@ dist/
 .claude/settings.local.json
 test-results/
 playwright-report/
+shared/node_modules/
+apps/*/node_modules/
+apps/*/dist/
+shared/e2e/test-results/
+shared/e2e/playwright-report/
+results/*.tmp
