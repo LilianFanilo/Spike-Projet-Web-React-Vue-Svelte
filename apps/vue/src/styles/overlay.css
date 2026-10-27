@@ -1,0 +1,89 @@
+/* Overlays OBS : 1920×1080, fond transparent, aucune barre de défilement (FR-020). */
+
+html,
+body {
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+  font-family: system-ui, "Segoe UI", sans-serif;
+}
+
+#app,
+.overlay {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+}
+
+/* Overlay A. L'animation d'alerte agit sur `transform` : aucun positionnement ne doit en dépendre. */
+.carte {
+  position: absolute;
+  top: 60px;
+  left: 80px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  transform-origin: left center;
+}
+
+.titre {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 800;
+  max-width: 1760px;
+  overflow-wrap: anywhere;
+}
+
+.score {
+  margin: 8px 0 0;
+  font-size: 96px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Overlay B : centré avec `translate` (et non `transform`, réservé à l'animation). */
+.bandeau {
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  translate: -50% 0;
+  transform-origin: center;
+  padding: 16px 48px;
+  border-radius: 12px;
+  background: #e0242c;
+  color: #fff;
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* Overlay 3D */
+.scene {
+  position: absolute;
+  inset: 0;
+}
+
+.cache {
+  display: none;
+}
+
+.repli {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.repli .disque {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+}
