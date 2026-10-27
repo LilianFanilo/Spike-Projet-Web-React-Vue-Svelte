@@ -34,7 +34,8 @@ function lireValeur(def: VariableDef, input: HTMLInputElement): VarValue | undef
 
 function afficherValeur(def: VariableDef, input: HTMLInputElement, value: VarValue): void {
   if (def.type === "boolean") input.checked = value === true;
-  else if (!(document.activeElement === input && lireValeur(def, input) === value)) input.value = String(value);
+  // Un champ en cours d'édition ignore les échos : un écho en retard écraserait la frappe.
+  else if (document.activeElement !== input) input.value = String(value);
 }
 
 function construire(vars: VariableDef[], values: Record<string, VarValue>): void {

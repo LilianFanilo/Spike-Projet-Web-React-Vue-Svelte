@@ -1,0 +1,284 @@
+{
+  "version": 1,
+  "entrees": [
+    {
+      "id": "2026-10-27T20:09:15.119Z-e2e-temoin",
+      "framework": "temoin",
+      "mesure": "e2e",
+      "valeur": 34,
+      "unite": "tests",
+      "valide": true,
+      "horodatage": "2026-10-27T20:09:15.119Z",
+      "conditions": {
+        "commit": "47bd19c",
+        "navigateur": "chromium (Playwright)",
+        "appUrl": "http://localhost:4170"
+      },
+      "details": {
+        "echoues": 0,
+        "listeEchecs": [],
+        "manuels": [
+          {
+            "id": "SC-002",
+            "raison": "Découverte du dashboard en moins d'une minute : test utilisateur"
+          },
+          {
+            "id": "US2-4 (rendu)",
+            "raison": "Grossissement ×1,15 et flash : seule la durée est observée automatiquement"
+          },
+          {
+            "id": "US2-7 (OBS)",
+            "raison": "Transparence réelle au-dessus de la vidéo dans OBS"
+          },
+          {
+            "id": "US3-1 (rendu)",
+            "raison": "Rotation continue visible du modèle"
+          },
+          {
+            "id": "US3-2 (rendu)",
+            "raison": "Teinte visible du modèle"
+          },
+          {
+            "id": "US3-3 (rendu)",
+            "raison": "Vitesse de rotation perçue"
+          },
+          {
+            "id": "US3-4 (rendu)",
+            "raison": "Saut de 0,5 unité et 2 tours visibles"
+          }
+        ],
+        "dureeMs": 32027,
+        "projets": [
+          "standard",
+          "sans-3d"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-27T20:09:34.328Z-e2e-temoin-defaut",
+      "framework": "temoin-defaut",
+      "mesure": "e2e",
+      "valeur": 7,
+      "unite": "tests",
+      "valide": true,
+      "horodatage": "2026-10-27T20:09:34.328Z",
+      "conditions": {
+        "commit": "47bd19c",
+        "navigateur": "chromium (Playwright)",
+        "appUrl": "http://localhost:4170",
+        "appQuery": "defaut=bandeau"
+      },
+      "details": {
+        "echoues": 1,
+        "listeEchecs": [
+          "[standard] US2-3 l'overlay B affiche ou masque le bandeau EN DIRECT"
+        ],
+        "manuels": [
+          {
+            "id": "SC-002",
+            "raison": "Découverte du dashboard en moins d'une minute : test utilisateur"
+          },
+          {
+            "id": "US2-4 (rendu)",
+            "raison": "Grossissement ×1,15 et flash : seule la durée est observée automatiquement"
+          },
+          {
+            "id": "US2-7 (OBS)",
+            "raison": "Transparence réelle au-dessus de la vidéo dans OBS"
+          },
+          {
+            "id": "US3-1 (rendu)",
+            "raison": "Rotation continue visible du modèle"
+          },
+          {
+            "id": "US3-2 (rendu)",
+            "raison": "Teinte visible du modèle"
+          },
+          {
+            "id": "US3-3 (rendu)",
+            "raison": "Vitesse de rotation perçue"
+          },
+          {
+            "id": "US3-4 (rendu)",
+            "raison": "Saut de 0,5 unité et 2 tours visibles"
+          }
+        ],
+        "dureeMs": 17138,
+        "projets": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-27T20:10:14.156Z-e2e-temoin-defaut",
+      "framework": "temoin-defaut",
+      "mesure": "e2e",
+      "valeur": 2,
+      "unite": "tests",
+      "valide": true,
+      "horodatage": "2026-10-27T20:10:14.156Z",
+      "conditions": {
+        "commit": "47bd19c",
+        "navigateur": "chromium (Playwright)",
+        "appUrl": "http://localhost:4170",
+        "appQuery": "defaut=score"
+      },
+      "details": {
+        "echoues": 6,
+        "listeEchecs": [
+          "[standard] US2-1 un overlay qui s'ouvre affiche l'état courant",
+          "[standard] US2-2 l'overlay A suit le titre et le score",
+          "[standard] US2-4 l'alerte anime les deux overlays pendant 2 s",
+          "[standard] US2-5 une alerte pendant une alerte la relance depuis le début",
+          "[standard] US2-6 l'overlay se reconnecte seul après un redémarrage du service",
+          "[standard] US2-7 overlay-a : fond transparent et aucune barre de défilement en 1920×1080"
+        ],
+        "manuels": [
+          {
+            "id": "SC-002",
+            "raison": "Découverte du dashboard en moins d'une minute : test utilisateur"
+          },
+          {
+            "id": "US2-4 (rendu)",
+            "raison": "Grossissement ×1,15 et flash : seule la durée est observée automatiquement"
+          },
+          {
+            "id": "US2-7 (OBS)",
+            "raison": "Transparence réelle au-dessus de la vidéo dans OBS"
+          },
+          {
+            "id": "US3-1 (rendu)",
+            "raison": "Rotation continue visible du modèle"
+          },
+          {
+            "id": "US3-2 (rendu)",
+            "raison": "Teinte visible du modèle"
+          },
+          {
+            "id": "US3-3 (rendu)",
+            "raison": "Vitesse de rotation perçue"
+          },
+          {
+            "id": "US3-4 (rendu)",
+            "raison": "Saut de 0,5 unité et 2 tours visibles"
+          }
+        ],
+        "dureeMs": 37835,
+        "projets": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-27T20:10:27.717Z-e2e-temoin-defaut",
+      "framework": "temoin-defaut",
+      "mesure": "e2e",
+      "valeur": 6,
+      "unite": "tests",
+      "valide": true,
+      "horodatage": "2026-10-27T20:10:27.717Z",
+      "conditions": {
+        "commit": "47bd19c",
+        "navigateur": "chromium (Playwright)",
+        "appUrl": "http://localhost:4170",
+        "appQuery": "defaut=alerte"
+      },
+      "details": {
+        "echoues": 2,
+        "listeEchecs": [
+          "[standard] US2-4 l'alerte anime les deux overlays pendant 2 s",
+          "[standard] US2-5 une alerte pendant une alerte la relance depuis le début"
+        ],
+        "manuels": [
+          {
+            "id": "SC-002",
+            "raison": "Découverte du dashboard en moins d'une minute : test utilisateur"
+          },
+          {
+            "id": "US2-4 (rendu)",
+            "raison": "Grossissement ×1,15 et flash : seule la durée est observée automatiquement"
+          },
+          {
+            "id": "US2-7 (OBS)",
+            "raison": "Transparence réelle au-dessus de la vidéo dans OBS"
+          },
+          {
+            "id": "US3-1 (rendu)",
+            "raison": "Rotation continue visible du modèle"
+          },
+          {
+            "id": "US3-2 (rendu)",
+            "raison": "Teinte visible du modèle"
+          },
+          {
+            "id": "US3-3 (rendu)",
+            "raison": "Vitesse de rotation perçue"
+          },
+          {
+            "id": "US3-4 (rendu)",
+            "raison": "Saut de 0,5 unité et 2 tours visibles"
+          }
+        ],
+        "dureeMs": 11369,
+        "projets": [
+          "standard"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-27T20:10:46.131Z-e2e-temoin-defaut",
+      "framework": "temoin-defaut",
+      "mesure": "e2e",
+      "valeur": 7,
+      "unite": "tests",
+      "valide": true,
+      "horodatage": "2026-10-27T20:10:46.131Z",
+      "conditions": {
+        "commit": "47bd19c",
+        "navigateur": "chromium (Playwright)",
+        "appUrl": "http://localhost:4170",
+        "appQuery": "defaut=reconnexion"
+      },
+      "details": {
+        "echoues": 1,
+        "listeEchecs": [
+          "[standard] US2-6 l'overlay se reconnecte seul après un redémarrage du service"
+        ],
+        "manuels": [
+          {
+            "id": "SC-002",
+            "raison": "Découverte du dashboard en moins d'une minute : test utilisateur"
+          },
+          {
+            "id": "US2-4 (rendu)",
+            "raison": "Grossissement ×1,15 et flash : seule la durée est observée automatiquement"
+          },
+          {
+            "id": "US2-7 (OBS)",
+            "raison": "Transparence réelle au-dessus de la vidéo dans OBS"
+          },
+          {
+            "id": "US3-1 (rendu)",
+            "raison": "Rotation continue visible du modèle"
+          },
+          {
+            "id": "US3-2 (rendu)",
+            "raison": "Teinte visible du modèle"
+          },
+          {
+            "id": "US3-3 (rendu)",
+            "raison": "Vitesse de rotation perçue"
+          },
+          {
+            "id": "US3-4 (rendu)",
+            "raison": "Saut de 0,5 unité et 2 tours visibles"
+          }
+        ],
+        "dureeMs": 16363,
+        "projets": [
+          "standard"
+        ]
+      }
+    }
+  ]
+}

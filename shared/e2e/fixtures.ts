@@ -175,7 +175,7 @@ export async function waitAttr(
   await page.waitForFunction(
     ([s, a, v]) => document.querySelector(s)?.getAttribute(a) === v,
     [selector, attr, value] as const,
-    { timeout, polling: "raf" },
+    { timeout, polling: 10 },
   );
   return Date.now() - since;
 }

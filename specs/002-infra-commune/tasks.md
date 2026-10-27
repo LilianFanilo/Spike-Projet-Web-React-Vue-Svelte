@@ -191,14 +191,14 @@
 
 **Independent Test** : avec `APP_URL=http://localhost:4170` et `FRAMEWORK=temoin`, 100 % des tests passent. Avec chacun des défauts `APP_QUERY=defaut=…`, le scénario visé échoue (quickstart §2 et §3).
 
-- [ ] T026 [P] [US2] Créer `shared/e2e/dashboard.spec.ts` (US1-1 à US1-6 de la spec gelée) :
+- [X] T026 [P] [US2] Créer `shared/e2e/dashboard.spec.ts` (US1-1 à US1-6 de la spec gelée) :
   - US1-1 : 5 contrôles `[data-var]` du bon type d'`input`, valeurs par défaut, libellés présents ;
   - US1-2 : pour chaque type, modifier le contrôle (avec `fill` ou `evaluate`, plus un événement `input`) → le client de test reçoit l'`update` attendu ;
   - US1-3 : cliquer `[data-action=alerte]` → le client reçoit une `alert` ;
   - US1-4 : `set` envoyé par le client de test → le contrôle affiche la valeur ;
   - US1-5 : `stop()` → `data-connection="off"` ; `start()` → `"on"` en moins de 5 s ;
   - US1-6 : `restart({vars:"variables.alt.json"})` puis rechargement → les contrôles correspondent à la liste alternative.
-- [ ] T027 [P] [US2] Créer `shared/e2e/overlays.spec.ts` (US2-1 à US2-7) :
+- [X] T027 [P] [US2] Créer `shared/e2e/overlays.spec.ts` (US2-1 à US2-7) :
   - US2-1 : `set` envoyé avant l'ouverture de la page → valeur affichée dès le chargement ;
   - US2-2 : titre et score (texte visible et `data-value`) ;
   - US2-3 : bandeau visible ou masqué (`toBeVisible` / `toBeHidden`) et `data-value` ;
@@ -206,14 +206,14 @@
   - US2-5 : seconde alerte à 1000 ms → toujours `"on"` à 2200 ms, puis `"off"` entre 2700 et 3300 ms ;
   - US2-6 : `stop`, `start`, `set` → la valeur s'affiche en moins de 5 s ;
   - US2-7 : `getComputedStyle` de `html` et `body` donne `rgba(0, 0, 0, 0)` ou `transparent`, et `scrollWidth ≤ innerWidth` / `scrollHeight ≤ innerHeight`.
-- [ ] T028 [P] [US2] Créer `shared/e2e/overlay-3d.spec.ts` (US3-1 à US3-6) :
+- [X] T028 [P] [US2] Créer `shared/e2e/overlay-3d.spec.ts` (US3-1 à US3-6) :
   - US3-1 : `canvas` présent avec un contexte WebGL, `data-var` couleur et vitesse présents, aucune `pageerror` ni `console.error` ;
   - US3-2 : couleur → `data-value` ;
   - US3-3 : vitesse `0` → `"0"`, et `1.5` → `"1.5"` ;
   - US3-4 : alerte → `data-alert` on puis off (tolérance de ±300 ms) ;
   - US3-5 `@repli` (projet `sans-3d`) : « 3D indisponible » visible, `data-var="couleur"`, et suivi de la couleur ;
   - US3-6 : avec `?debug=1`, `[data-fps]` est visible et `stats().fps` contient des valeurs pour `overlay-3d` en moins de 3 s ; sans ce paramètre, ni `[data-fps]` ni FPS.
-- [ ] T029 [P] [US2] Créer `shared/e2e/bords.spec.ts` (cas limites testables de la spec gelée, titres `BORD-…`) :
+- [X] T029 [P] [US2] Créer `shared/e2e/bords.spec.ts` (cas limites testables de la spec gelée, titres `BORD-…`) :
   - service absent au chargement de l'overlay, puis démarré → affichage en moins de 3 s ;
   - rafale de 50 `set` du score → la valeur finale est affichée ;
   - titre vide → `data-value=""` et aucune erreur ;
@@ -239,8 +239,8 @@
   - `details: { echoues, listeEchecs (titres), manuels (de manuels.ts), dureeMs, projets }`.
 
   Il dépend de T031.
-- [ ] T033 [US2] Construire puis servir le témoin, et lancer la suite (`APP_URL=http://localhost:4170`, `FRAMEWORK=temoin`). Corriger l'outillage ou le témoin jusqu'à 100 % au vert dans les deux projets (SC-001). Vérifier qu'une entrée `e2e` est bien écrite et que `dureeMs` est inférieur à 300000 (SC-006).
-- [ ] T034 [US2] Lancer la suite avec `FRAMEWORK=temoin-defaut` et `APP_QUERY=defaut=bandeau`, puis `score`, `alerte` et `reconnexion`. Vérifier que le scénario visé échoue (US2-3, US2-2, US2-4, US2-6), ce qui couvre SC-002 et le scénario US2-4 de cette feature. Noter le résultat dans `specs/002-infra-commune/quickstart.md`, rubrique « Résultats de validation ».
+- [X] T033 [US2] Construire puis servir le témoin, et lancer la suite (`APP_URL=http://localhost:4170`, `FRAMEWORK=temoin`). Corriger l'outillage ou le témoin jusqu'à 100 % au vert dans les deux projets (SC-001). Vérifier qu'une entrée `e2e` est bien écrite et que `dureeMs` est inférieur à 300000 (SC-006).
+- [X] T034 [US2] Lancer la suite avec `FRAMEWORK=temoin-defaut` et `APP_QUERY=defaut=bandeau`, puis `score`, `alerte` et `reconnexion`. Vérifier que le scénario visé échoue (US2-3, US2-2, US2-4, US2-6), ce qui couvre SC-002 et le scénario US2-4 de cette feature. Noter le résultat dans `specs/002-infra-commune/quickstart.md`, rubrique « Résultats de validation ».
 
 **Checkpoint** : la suite est validée. Elle détecte les défauts et passe sur le témoin.
 

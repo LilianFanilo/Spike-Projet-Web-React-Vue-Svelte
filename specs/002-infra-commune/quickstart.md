@@ -85,3 +85,21 @@ Résultats attendus :
 ## Sortie
 
 Une fois les étapes 2 à 5 au vert, fusionner `002-infra-commune` dans `main`, puis poser le tag `base-commune`.
+
+## Résultats de validation
+
+### 2026-10-27 — Suite d'acceptation (T033, SC-001, SC-006)
+
+- Témoin (`FRAMEWORK=temoin`) : **34/34 réussis** (33 en `standard`, 1 en `sans-3d`), en **32 s**. L'entrée `e2e` est enregistrée.
+- Premier passage : 33/34. `BORD-titre-long` a révélé un bug du témoin : un écho du service arrivé en retard écrasait la saisie en cours. Le dashboard témoin ignore maintenant les échos sur le champ qui a le focus. Les trois frameworks seront confrontés au même cas.
+
+### 2026-10-27 — Défauts injectés (T034, SC-002)
+
+Campagnes lancées sur `overlays.spec.ts`, avec `FRAMEWORK=temoin-defaut` :
+
+| Défaut | Scénario visé | Résultat |
+| --- | --- | --- |
+| `bandeau` | US2-3 | ✅ US2-3 échoue (seul échec) |
+| `score` | US2-2 | ✅ US2-2 échoue, ainsi que US2-1, US2-4 et US2-5, qui attendent la valeur du score |
+| `alerte` | US2-4 | ✅ US2-4 et US2-5 échouent |
+| `reconnexion` | US2-6 | ✅ US2-6 échoue (seul échec) |
