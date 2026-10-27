@@ -25,15 +25,15 @@
 
 **Purpose** : initialisation des projets npm et de la configuration TypeScript.
 
-- [ ] T001 Créer `shared/package.json` avec :
+- [X] T001 Créer `shared/package.json` avec :
   - `"type": "module"`, `"private": true` ;
   - les dépendances : `ws` ; en développement : `@playwright/test`, `cloc`, `@types/ws`, `@types/node` et `typescript` ;
   - les scripts npm `serveur`, `e2e`, `latence`, `alertes`, `poids`, `fps`, `lignes`, `grille` et `typecheck` (`tsc --noEmit`), dont les commandes sont dans `specs/002-infra-commune/contracts/commandes.md`.
 
   Lancer ensuite `npm install` dans `shared/`.
-- [ ] T002 [P] Créer `shared/tsconfig.json` avec `strict: true`, `erasableSyntaxOnly: true`, `allowImportingTsExtensions: true`, `verbatimModuleSyntax: true`, `noEmit: true`, `module: "nodenext"`, `target: "es2023"`, `lib: ["es2023", "dom"]` et `types: ["node"]`. Inclure tous les `**/*.ts` sauf `node_modules`.
-- [ ] T003 [P] Mettre à jour `.gitignore` à la racine : ajouter `shared/node_modules/`, `apps/*/node_modules/`, `apps/*/dist/`, `shared/e2e/test-results/` et `shared/e2e/playwright-report/`. `results/mesures.json` reste versionné.
-- [ ] T004 Lancer `npx playwright install chromium` dans `shared/` (navigateur aligné sur la version installée à T001).
+- [X] T002 [P] Créer `shared/tsconfig.json` avec `strict: true`, `erasableSyntaxOnly: true`, `allowImportingTsExtensions: true`, `verbatimModuleSyntax: true`, `noEmit: true`, `module: "nodenext"`, `target: "es2023"`, `lib: ["es2023", "dom"]` et `types: ["node"]`. Inclure tous les `**/*.ts` sauf `node_modules`.
+- [X] T003 [P] Mettre à jour `.gitignore` à la racine : ajouter `shared/node_modules/`, `apps/*/node_modules/`, `apps/*/dist/`, `shared/e2e/test-results/` et `shared/e2e/playwright-report/`. `results/mesures.json` reste versionné.
+- [X] T004 Lancer `npx playwright install chromium` dans `shared/` (navigateur aligné sur la version installée à T001).
 
 ---
 
@@ -43,7 +43,7 @@
 
 **⚠️ CRITICAL** : aucune story ne commence avant la fin de cette phase.
 
-- [ ] T005 Créer `shared/protocol.ts` selon `contracts/protocole.md`. Il exporte :
+- [X] T005 Créer `shared/protocol.ts` selon `contracts/protocole.md`. Il exporte :
   - les constantes `SERVICE_PORT = 8787`, `SERVICE_HOST = "127.0.0.1"`, `WS_URL`, `HTTP_URL` et `ALERT_DURATION_MS = 2000` ;
   - les types `VarType` (`"text" | "number" | "boolean" | "color" | "speed"`), `VarValue`, `VariableDef`, `Values`, `OverlayName` (`"overlay-a" | "overlay-b" | "overlay-3d"`), `ClientMessage` et `ServerMessage` (unions discriminées sur `type`) ;
   - les fonctions `validate(def, value)`, `normalize(def, value)` et `serialize(type, value)`.
@@ -56,7 +56,7 @@
   - sérialisation : nombres par `String(value)`, booléens `"true"` / `"false"`, couleur en minuscules.
 
   Syntaxe effaçable uniquement : pas d'`enum`, pas de `namespace`, pas de propriétés de paramètre.
-- [ ] T006 [P] Créer `shared/variables.json` avec les 5 variables de la spec gelée :
+- [X] T006 [P] Créer `shared/variables.json` avec les 5 variables de la spec gelée :
 
   | id | label | type | default | Contraintes |
   | --- | --- | --- | --- | --- |
@@ -66,9 +66,9 @@
   | `couleur` | « Couleur du modèle » | `color` | `#4f8cff` | — |
   | `vitesse` | « Vitesse de rotation » | `speed` | 0.25 | `min: 0`, `max: 2`, `step: 0.05` |
 
-- [ ] T007 [P] Créer `shared/variables.alt.json` : la même liste, sans `vitesse`, avec le libellé de `titre` changé en « Titre du live », et une variable ajoutée `{ id: "sous-titre", label: "Sous-titre", type: "text", default: "", maxLength: 60 }`.
+- [X] T007 [P] Créer `shared/variables.alt.json` : la même liste, sans `vitesse`, avec le libellé de `titre` changé en « Titre du live », et une variable ajoutée `{ id: "sous-titre", label: "Sous-titre", type: "text", default: "", maxLength: 60 }`.
 
-- [ ] T008 [P] Créer `shared/assets/build-model.ts` :
+- [X] T008 [P] Créer `shared/assets/build-model.ts` :
   - télécharger `Suzanne.gltf` et `Suzanne.bin` depuis `https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Suzanne/glTF/` ;
   - retirer `images`, `textures` et `samplers`, ainsi que les références de texture des matériaux ;
   - fixer `pbrMetallicRoughness: { baseColorFactor: [1,1,1,1], metallicFactor: 0, roughnessFactor: 0.5 }` ;

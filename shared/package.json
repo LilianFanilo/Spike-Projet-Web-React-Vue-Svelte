@@ -1,0 +1,27 @@
+{
+  "name": "@spike/shared",
+  "private": true,
+  "type": "module",
+  "description": "Outillage commun du spike React vs Vue vs Svelte (voir specs/002-infra-commune)",
+  "scripts": {
+    "serveur": "node server/index.ts",
+    "e2e": "playwright test -c e2e/playwright.config.ts",
+    "latence": "node bench/latency.ts",
+    "alertes": "node bench/alerts.ts",
+    "poids": "node bench/sizes.ts",
+    "fps": "node bench/fps.ts",
+    "lignes": "node bench/cloc.ts",
+    "grille": "node bench/grille.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "@types/ws": "^8.18.2",
+    "cloc": "^2.10.0-cloc",
+    "typescript": "^7.0.2"
+  }
+}
