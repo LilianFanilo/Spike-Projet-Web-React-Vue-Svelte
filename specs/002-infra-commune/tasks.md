@@ -298,7 +298,7 @@
 
 **Independent Test** : quickstart §5 sur le témoin, en moins de 30 minutes (SC-007).
 
-- [ ] T043 [US5] Rédiger `results/protocole-obs.md`. Il doit couvrir :
+- [X] T043 [US5] Rédiger `results/protocole-obs.md`. Il doit couvrir :
   - les prérequis : version d'OBS à noter, fermer les onglets de navigateur des overlays ;
   - l'accélération matérielle des sources navigateur (Paramètres > Avancé), puis le redémarrage d'OBS ;
   - la cadence d'images d'OBS (Paramètres > Vidéo), à noter et à garder identique pour toutes les mesures ;
@@ -323,9 +323,9 @@
 
 **Purpose** : contrôle final et pose du tag `base-commune`.
 
-- [ ] T045 [P] Lancer `npm run typecheck` dans `shared/` et `npm run build` dans `apps/temoin` : aucune erreur.
-- [ ] T046 [P] Vérifier que `shared/` respecte le principe II : aucun `enum`, aucun `namespace`, tous les imports relatifs portent l'extension `.ts`, et aucune dépendance n'est importée par `client.ts`, `probe.ts`, `fps.ts` ou `protocol.ts`.
-- [ ] T047 Ajouter `shared/README.md` : un aperçu en 10 lignes et des liens vers `specs/002-infra-commune/contracts/` et `quickstart.md`. C'est le point d'entrée des trois implémentations.
+- [X] T045 [P] Lancer `npm run typecheck` dans `shared/` et `npm run build` dans `apps/temoin` : aucune erreur.
+- [X] T046 [P] Vérifier que `shared/` respecte le principe II : aucun `enum`, aucun `namespace`, tous les imports relatifs portent l'extension `.ts`, et aucune dépendance n'est importée par `client.ts`, `probe.ts`, `fps.ts` ou `protocol.ts`.
+- [X] T047 Ajouter `shared/README.md` : un aperçu en 10 lignes et des liens vers `specs/002-infra-commune/contracts/` et `quickstart.md`. C'est le point d'entrée des trois implémentations.
 - [ ] T048 Fusionner `002-infra-commune` dans `main` (`--no-ff`), puis poser le tag annoté `base-commune`.
 
 ---
