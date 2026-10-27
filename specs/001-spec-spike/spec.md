@@ -14,11 +14,20 @@ Le logiciel crée des overlays pour streamers. Ce sont des pages web qu'OBS capt
 
 Cette spécification est **unique et indépendante du framework**. Elle est implémentée trois fois, à l'identique, en React, en Vue et en Svelte. Les implémentations sont ensuite comparées avec la grille de résultats du spike.
 
+## Clarifications
+
+### Session 2026-10-27
+
+- Q: Comment le dashboard obtient-il la liste des variables ? → A: Le service de diffusion envoie, à chaque connexion, les définitions des variables et leurs valeurs courantes dans un même message de bienvenue. Le dashboard construit ses champs à partir de ce message.
+- Q: Faut-il décrire précisément les animations d'alerte, et par quel moyen les réaliser ? → A: Le rendu visuel est décrit précisément et doit être identique pour les trois frameworks (2D : grossissement jusqu'à ×1,15 puis retour, avec flash lumineux, 2 s en ease-out ; 3D : saut de 0,5 unité et 2 tours supplémentaires, 2 s). Chaque framework utilise ses moyens natifs, sans librairie d'animation.
+- Q: Que doit afficher le bandeau de l'overlay B quand il est visible ? → A: Le texte fixe « EN DIRECT ».
+- Q: Le dashboard doit-il envoyer chaque modification sans regroupement ni limitation de fréquence ? → A: Oui. Chaque événement de saisie (frappe, position du curseur, changement de valeur) envoie une mise à jour, sans throttle ni debounce.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Piloter les variables du live depuis le dashboard (Priority: P1)
 
-Le streamer ouvre le dashboard dans son navigateur. Il y trouve un champ par variable du projet, généré automatiquement à partir de la liste des variables :
+Le streamer ouvre le dashboard dans son navigateur. Il y trouve un champ par variable du projet, généré automatiquement à partir de la liste des variables envoyée par le service de diffusion :
 - le **titre** (texte) ;
 - le **score** (nombre) ;
 - le **bandeau visible** (booléen) ;
@@ -38,7 +47,7 @@ Chaque champ affiche la valeur courante. Toute modification est diffusée aussit
 3. **Given** le dashboard ouvert, **When** le streamer clique sur « Alerte », **Then** un événement d'alerte est diffusé à tous les overlays connectés.
 4. **Given** une variable modifiée par un autre dashboard ouvert en parallèle, **When** la modification est diffusée, **Then** le champ correspondant du dashboard affiche la nouvelle valeur.
 5. **Given** le service de diffusion arrêté, **When** le streamer regarde le dashboard, **Then** un indicateur signale que la connexion est perdue, et il signale son rétablissement dès que le service revient.
-6. **Given** une liste de variables où un élément a été ajouté, retiré ou renommé, **When** le dashboard est rechargé, **Then** les champs reflètent la nouvelle liste, sans modification du dashboard lui-même.
+6. **Given** le service de diffusion relancé avec une liste de variables où un élément a été ajouté, retiré ou renommé, **When** le dashboard est rechargé, **Then** les champs reflètent la nouvelle liste, sans modification ni rebuild du dashboard.
 
 ---
 
@@ -46,7 +55,7 @@ Chaque champ affiche la valeur courante. Toute modification est diffusée aussit
 
 Le streamer ajoute deux overlays dans OBS sous forme de sources navigateur, en 1920×1080 avec un fond transparent.
 - L'**overlay A** affiche le titre et le score.
-- L'**overlay B** affiche un bandeau, visible ou masqué selon la variable « bandeau visible ».
+- L'**overlay B** affiche un bandeau « EN DIRECT », visible ou masqué selon la variable « bandeau visible ».
 
 Chaque modification faite dans le dashboard met à jour les deux overlays. L'alerte joue une animation bien visible, d'environ 2 secondes, dans chacun des deux.
 
@@ -59,7 +68,7 @@ Chaque modification faite dans le dashboard met à jour les deux overlays. L'ale
 1. **Given** le service de diffusion lancé avec un état courant, **When** un overlay s'ouvre, **Then** il affiche immédiatement l'état courant, sans attendre une nouvelle modification.
 2. **Given** les deux overlays ouverts, **When** le titre ou le score change, **Then** l'overlay A affiche la nouvelle valeur.
 3. **Given** les deux overlays ouverts, **When** « bandeau visible » passe à vrai ou à faux, **Then** l'overlay B affiche ou masque le bandeau.
-4. **Given** les deux overlays ouverts, **When** une alerte est déclenchée, **Then** chacun joue une animation visible qui dure entre 1,5 et 3 secondes, puis revient à son état normal.
+4. **Given** les deux overlays ouverts, **When** une alerte est déclenchée, **Then** chacun joue l'animation d'alerte définie par FR-023 (grossissement ×1,15 avec flash lumineux, 2 secondes), puis revient à son état normal.
 5. **Given** une alerte en cours, **When** une nouvelle alerte arrive, **Then** l'animation redémarre depuis le début, sans se cumuler ni se bloquer.
 6. **Given** un overlay ouvert, **When** le service de diffusion s'arrête puis redémarre, **Then** l'overlay se reconnecte seul dans les 5 secondes qui suivent le redémarrage et affiche l'état courant.
 7. **Given** un overlay chargé dans OBS en 1920×1080, **When** aucune variable n'est affichée à un endroit, **Then** la vidéo reste visible au travers : aucun fond opaque ni barre de défilement.
@@ -84,7 +93,7 @@ Si la 3D est indisponible (accélération matérielle désactivée dans OBS, par
 1. **Given** l'overlay 3D ouvert, **When** la page est chargée, **Then** le modèle est visible, centré, et tourne en continu à la vitesse courante.
 2. **Given** l'overlay 3D ouvert, **When** la couleur change, **Then** le modèle prend la nouvelle couleur.
 3. **Given** l'overlay 3D ouvert, **When** la vitesse change, **Then** la rotation accélère ou ralentit en conséquence. Une vitesse de 0 arrête la rotation.
-4. **Given** l'overlay 3D ouvert, **When** une alerte est déclenchée, **Then** le modèle saute et tourne rapidement pendant 1,5 à 3 secondes, puis reprend sa rotation normale.
+4. **Given** l'overlay 3D ouvert, **When** une alerte est déclenchée, **Then** le modèle joue l'animation définie par FR-032 (saut de 0,5 unité et 2 tours supplémentaires, 2 secondes), puis reprend sa rotation normale.
 5. **Given** un navigateur sans 3D disponible, **When** l'overlay 3D est ouvert, **Then** un repli 2D s'affiche (une forme de la couleur courante et le libellé « 3D indisponible »), et il continue de suivre la variable couleur.
 6. **Given** l'overlay 3D ouvert avec le paramètre de débogage, **When** la scène tourne, **Then** un compteur d'images par seconde est affiché et ses valeurs sont transmises au service de diffusion. Sans ce paramètre, aucun compteur n'est visible.
 
@@ -108,30 +117,40 @@ Si la 3D est indisponible (accélération matérielle désactivée dans OBS, par
 **Variables et état**
 
 - **FR-001** : Le système DOIT décrire les variables du projet dans une liste unique et partagée. Chaque variable a un identifiant, un libellé, un type (texte, nombre, booléen, couleur, vitesse), une valeur par défaut et d'éventuelles bornes.
-- **FR-002** : Le service de diffusion DOIT conserver la valeur courante de chaque variable pendant sa durée d'exécution, et l'envoyer à tout client qui se connecte.
+- **FR-002** : Le service de diffusion DOIT conserver la valeur courante de chaque variable pendant sa durée d'exécution. Il DOIT envoyer à tout client qui se connecte un message de bienvenue contenant à la fois les définitions des variables et leurs valeurs courantes.
 - **FR-003** : Toute modification reçue DOIT être diffusée à tous les clients connectés : dashboards et overlays.
 
 **Dashboard (US1)**
 
-- **FR-010** : Le dashboard DOIT générer ses champs à partir de la liste des variables, sans champ codé en dur par variable.
+- **FR-010** : Le dashboard DOIT générer ses champs à partir des définitions reçues dans le message de bienvenue du service de diffusion. Il ne contient aucun champ codé en dur par variable et n'embarque pas la liste au build.
 - **FR-011** : Le dashboard DOIT proposer un contrôle adapté à chaque type et appliquer les bornes définies dans la liste.
-- **FR-012** : Le dashboard DOIT diffuser chaque modification immédiatement, sans bouton de validation.
+- **FR-012** : Le dashboard DOIT diffuser chaque modification immédiatement, sans bouton de validation. Chaque événement de saisie (frappe, position du curseur, changement de valeur) envoie une mise à jour. Aucun regroupement ni limitation de fréquence (throttle, debounce) n'est autorisé.
 - **FR-013** : Le dashboard DOIT proposer un bouton « Alerte » qui diffuse un événement d'alerte ponctuel.
 - **FR-014** : Le dashboard DOIT afficher l'état de connexion au service de diffusion (connecté ou déconnecté).
 
 **Overlays 2D (US2)**
 
 - **FR-020** : Chaque overlay DOIT être une page distincte, accessible à sa propre adresse locale, conçue pour 1920×1080 et avec un fond transparent.
-- **FR-021** : L'overlay A DOIT afficher le titre et le score. L'overlay B DOIT afficher le bandeau quand « bandeau visible » est vrai, et le masquer sinon.
+- **FR-021** : L'overlay A DOIT afficher le titre et le score. L'overlay B DOIT afficher un bandeau portant le texte fixe « EN DIRECT » quand « bandeau visible » est vrai, et le masquer sinon. Seule la variable `bandeau` met à jour l'overlay B.
 - **FR-022** : Les overlays DOIVENT afficher l'état courant dès leur connexion, puis chaque modification dès sa réception.
-- **FR-023** : À chaque alerte, chaque overlay DOIT jouer une animation visible de 1,5 à 3 secondes, qui redémarre si une alerte arrive pendant qu'elle est en cours.
+- **FR-023** : À chaque alerte, chaque overlay 2D DOIT jouer la même animation, avec ce rendu visuel :
+  - les éléments affichés (titre et score dans l'overlay A, bandeau dans l'overlay B, s'il est visible) grossissent jusqu'à ×1,15 puis reviennent à leur taille normale ;
+  - en même temps, un flash lumineux apparaît puis disparaît sur ces éléments ;
+  - la durée totale est de 2 secondes, avec une courbe ease-out.
+
+  L'animation redémarre depuis le début si une alerte arrive pendant qu'elle est en cours. Elle DOIT être réalisée avec les moyens natifs du navigateur ou du framework, sans librairie d'animation.
 - **FR-024** : Les overlays DOIVENT se reconnecter automatiquement après une coupure du service de diffusion, et rétablir l'état courant.
 
 **Overlay 3D (US3)**
 
 - **FR-030** : L'overlay 3D DOIT afficher le modèle 3D fourni par l'outillage commun, en rotation continue.
 - **FR-031** : La couleur du modèle DOIT suivre la variable « couleur », et sa vitesse de rotation la variable « vitesse ».
-- **FR-032** : À chaque alerte, le modèle DOIT jouer une animation de saut et de rotation rapide de 1,5 à 3 secondes, qui redémarre si une alerte arrive pendant qu'elle est en cours.
+- **FR-032** : À chaque alerte, le modèle DOIT jouer la même animation, avec ce rendu visuel :
+  - un saut vertical de 0,5 unité de scène, qui monte puis redescend ;
+  - en même temps, 2 tours supplémentaires autour de son axe vertical, en plus de la rotation continue ;
+  - la durée totale est de 2 secondes, avec une courbe ease-out.
+
+  L'animation redémarre depuis le début si une alerte arrive pendant qu'elle est en cours. Elle DOIT être réalisée sans librairie d'animation.
 - **FR-033** : Si la 3D est indisponible ou si le modèle ne se charge pas, l'overlay DOIT afficher un repli 2D qui suit la variable couleur et porte le libellé « 3D indisponible ».
 - **FR-034** : Avec le paramètre de débogage, l'overlay 3D DOIT afficher un compteur d'images par seconde et en transmettre les valeurs au service de diffusion. Sans ce paramètre, rien ne DOIT être affiché.
 
@@ -162,7 +181,7 @@ Ce contrat est identique pour les trois implémentations. Il permet aux tests d'
   | `couleur` | Couleur du modèle | couleur | `#4f8cff` | — |
   | `vitesse` | Vitesse de rotation | vitesse (tours/s) | 0,25 | 0 à 2, pas de 0,05 |
 
-- **État courant** : l'ensemble des valeurs courantes des variables, détenu par le service de diffusion et transmis à chaque nouvelle connexion.
+- **État courant** : l'ensemble des valeurs courantes des variables, détenu par le service de diffusion. Il est transmis à chaque nouvelle connexion dans le message de bienvenue, avec les définitions des variables.
 - **Alerte** : un événement ponctuel sans valeur. Chaque overlay le joue sous forme d'animation.
 - **Overlay** : une page affichée dans OBS, qui affiche un sous-ensemble de variables et réagit aux alertes.
 
