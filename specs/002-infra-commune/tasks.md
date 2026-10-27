@@ -145,36 +145,36 @@
 
 **Independent Test** : `npm run build && npm run preview` dans `apps/temoin`, puis ouvrir les 4 pages avec le service lancé. Modifier une valeur dans le dashboard met à jour les overlays, et l'alerte anime pendant 2 s. La validation complète se fait à la fin de la phase 5 (US2).
 
-- [ ] T016 [US4] Créer `apps/temoin/package.json` (`"type": "module"`, dépendances de développement `vite` et `typescript`, scripts `build: "tsc --noEmit && vite build"` et `preview: "vite preview"`) et `apps/temoin/tsconfig.json` (`strict`, `allowImportingTsExtensions`, `noEmit`, `moduleResolution: "bundler"`, `paths: { "@shared/*": ["../../shared/*"] }`, `types: ["vite/client"]`), puis lancer `npm install`.
-- [ ] T017 [US4] Créer `apps/temoin/vite.config.ts` selon `contracts/integration-apps.md` : alias `@shared` vers `../../shared`, `server.fs.allow: ["..", "../../shared"]`, `build.manifest: true`, `rollupOptions.input` avec les 4 HTML, `preview: { port: 4170, strictPort: true }`.
-- [ ] T018 [P] [US4] Créer les 4 fichiers `apps/temoin/dashboard.html`, `overlay-a.html`, `overlay-b.html` et `overlay-3d.html`. Chacun contient `<div id="app">` et charge `/src/<page>.ts` en module.
-- [ ] T019 [P] [US4] Créer `apps/temoin/src/style.css` :
+- [X] T016 [US4] Créer `apps/temoin/package.json` (`"type": "module"`, dépendances de développement `vite` et `typescript`, scripts `build: "tsc --noEmit && vite build"` et `preview: "vite preview"`) et `apps/temoin/tsconfig.json` (`strict`, `allowImportingTsExtensions`, `noEmit`, `moduleResolution: "bundler"`, `paths: { "@shared/*": ["../../shared/*"] }`, `types: ["vite/client"]`), puis lancer `npm install`.
+- [X] T017 [US4] Créer `apps/temoin/vite.config.ts` selon `contracts/integration-apps.md` : alias `@shared` vers `../../shared`, `server.fs.allow: ["..", "../../shared"]`, `build.manifest: true`, `rollupOptions.input` avec les 4 HTML, `preview: { port: 4170, strictPort: true }`.
+- [X] T018 [P] [US4] Créer les 4 fichiers `apps/temoin/dashboard.html`, `overlay-a.html`, `overlay-b.html` et `overlay-3d.html`. Chacun contient `<div id="app">` et charge `/src/<page>.ts` en module.
+- [X] T019 [P] [US4] Créer `apps/temoin/src/style.css` :
   - `html, body { background: transparent; margin: 0; overflow: hidden }` pour les overlays ;
   - une classe `.alerte` qui applique `@keyframes alerte` (scale 1 → 1.15 → 1 et flash par `filter: brightness(1 → 2.5 → 1)`, 2 s, `ease-out`), comme le prévoit FR-023 de la spec gelée ;
   - un style lisible en 1080p.
-- [ ] T020 [P] [US4] Créer `apps/temoin/src/defauts.ts` : `defaut(code)` renvoie `true` si `new URLSearchParams(location.search).get("defaut") === code`. Codes possibles : `bandeau`, `score`, `alerte`, `reconnexion`.
-- [ ] T021 [P] [US4] Créer `apps/temoin/src/alerte.ts`. Il exporte `jouerAlerte(racine, cibles)` :
+- [X] T020 [P] [US4] Créer `apps/temoin/src/defauts.ts` : `defaut(code)` renvoie `true` si `new URLSearchParams(location.search).get("defaut") === code`. Codes possibles : `bandeau`, `score`, `alerte`, `reconnexion`.
+- [X] T021 [P] [US4] Créer `apps/temoin/src/alerte.ts`. Il exporte `jouerAlerte(racine, cibles)` :
   - poser `data-alert="on"` sur la racine ;
   - relancer l'animation CSS (retrait de la classe, lecture de `offsetWidth`, ajout de la classe) ;
   - annuler le minuteur précédent, puis remettre `data-alert="off"` après `ALERT_DURATION_MS`.
 
   Une alerte qui arrive pendant une autre doit redémarrer l'animation depuis le début. Avec `defaut("alerte")`, la fonction ne fait rien.
-- [ ] T022 [US4] Créer `apps/temoin/src/dashboard.ts` :
+- [X] T022 [US4] Créer `apps/temoin/src/dashboard.ts` :
   - la racine `#app` porte `data-connection` ;
   - `onWelcome` reconstruit les champs à partir des `vars` : un `label` avec le libellé, et un contrôle natif dont le type suit la table de `contracts/integration-apps.md` (`maxlength`, `min`, `max`, `step`), qui porte `data-var` et la valeur courante ;
   - l'événement `input` (ou `change` pour une case à cocher) appelle `client.set`, en convertissant `number` et `speed` en nombres. Aucun throttle (FR-012 de la spec gelée) ;
   - `onUpdate` met à jour le contrôle, sauf si c'est lui qui a le focus et a déjà la même valeur ;
   - un bouton `data-action="alerte"` libellé « Alerte » appelle `client.alert()`.
-- [ ] T023 [P] [US4] Créer `apps/temoin/src/overlay-a.ts` :
+- [X] T023 [P] [US4] Créer `apps/temoin/src/overlay-a.ts` :
   - afficher le titre et le score dans deux éléments `[data-var]` dont le texte et `data-value` (`serialize`) sont tenus à jour, à partir de `onWelcome` puis de `onUpdate` ;
   - avec `defaut("score")`, ignorer les mises à jour du score ;
   - à l'alerte, appeler `jouerAlerte` ;
   - `connect({role:"overlay", name:"overlay-a", reconnect: !defaut("reconnexion")})`.
-- [ ] T024 [P] [US4] Créer `apps/temoin/src/overlay-b.ts` :
+- [X] T024 [P] [US4] Créer `apps/temoin/src/overlay-b.ts` :
   - un bandeau `[data-var="bandeau"]`, toujours présent, avec le texte « EN DIRECT », affiché ou masqué (`display`) selon la valeur, et `data-value` tenu à jour ;
   - avec `defaut("bandeau")`, ignorer les mises à jour ;
   - alerte et reconnexion comme pour l'overlay A.
-- [ ] T025 [P] [US4] Créer `apps/temoin/src/overlay-3d.ts` :
+- [X] T025 [P] [US4] Créer `apps/temoin/src/overlay-3d.ts` :
   - un conteneur avec deux éléments enfants distincts et masqués, l'un `data-var="couleur"`, l'autre `data-var="vitesse"`, et un `<canvas>` en 1920×1080 ;
   - `fetch(modelUrl)` (avec `import modelUrl from "@shared/assets/model.glb?url"`) puis `getContext("webgl2") ?? getContext("webgl")`. Si l'un des deux échoue → repli : un `div` visible contenant « 3D indisponible », avec un disque de la couleur courante, qui porte `data-var="couleur"` et **remplace** l'élément couleur de la scène. L'élément `data-var="vitesse"` reste présent, et il n'y a jamais deux éléments pour un même `data-var` (règle d'unicité de `contracts/integration-apps.md`) ;
   - sinon, une boucle `requestAnimationFrame` qui appelle `clearColor` avec la couleur courante, et dont la luminosité pulse pendant l'alerte ;
