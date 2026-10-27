@@ -326,7 +326,7 @@
 - [X] T045 [P] Lancer `npm run typecheck` dans `shared/` et `npm run build` dans `apps/temoin` : aucune erreur.
 - [X] T046 [P] Vérifier que `shared/` respecte le principe II : aucun `enum`, aucun `namespace`, tous les imports relatifs portent l'extension `.ts`, et aucune dépendance n'est importée par `client.ts`, `probe.ts`, `fps.ts` ou `protocol.ts`.
 - [X] T047 Ajouter `shared/README.md` : un aperçu en 10 lignes et des liens vers `specs/002-infra-commune/contracts/` et `quickstart.md`. C'est le point d'entrée des trois implémentations.
-- [ ] T048 Fusionner `002-infra-commune` dans `main` (`--no-ff`), puis poser le tag annoté `base-commune`.
+- [X] T048 Fusionner `002-infra-commune` dans `main` (`--no-ff`), puis poser le tag annoté `base-commune`.
 
 ---
 
