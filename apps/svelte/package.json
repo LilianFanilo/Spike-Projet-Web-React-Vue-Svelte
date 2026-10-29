@@ -1,0 +1,24 @@
+{
+  "name": "@spike/svelte",
+  "private": true,
+  "type": "module",
+  "description": "Implémentation Svelte du spike (specs/005-spike-svelte)",
+  "scripts": {
+    "build": "svelte-check --tsconfig ./tsconfig.app.json && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@threlte/core": "^8.6.1",
+    "svelte": "^5.57.3",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tsconfig/svelte": "^5.0.8",
+    "@types/node": "^24.19.2",
+    "@types/three": "^0.186.0",
+    "svelte-check": "^4.7.7",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.5"
+  }
+}
