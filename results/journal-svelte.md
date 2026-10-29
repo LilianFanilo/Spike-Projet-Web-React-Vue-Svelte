@@ -43,4 +43,4 @@ Aucune. Le code produit par l'IA a passé svelte-check, `svelte-autofixer`, les 
 
 ## Ressenti (/5)
 
-À remplir par Lilian (dashboard, overlays, 3D).
+Non noté : l'étape du ressenti a été supprimée le 2026-10-29 (décision de Lilian). Les critères concernés du barème sont calculés sur leurs sous-mesures objectives (voir `recommandation.md`).

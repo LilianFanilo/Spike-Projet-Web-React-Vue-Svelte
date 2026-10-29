@@ -946,6 +946,1077 @@
           "sans-3d"
         ]
       }
+    },
+    {
+      "id": "2026-10-29T01:10:45.393Z-poids-dashboard-react",
+      "framework": "react",
+      "mesure": "poids-dashboard",
+      "valeur": 62.35,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:45.393Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "dashboard.html",
+          "assets/dashboard-CU4tSyIf.js",
+          "assets/dashboard-BJ7k5HN0.css",
+          "assets/jsx-runtime-tmpA0a8I.js"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:45.453Z-poids-overlay-a-react",
+      "framework": "react",
+      "mesure": "poids-overlay-a",
+      "valeur": 61.66,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:45.453Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-a.html",
+          "assets/overlay-a-D-DCfssh.js",
+          "assets/overlay-rpyLjfyP.css",
+          "assets/Alerte-ByBjX7is.js",
+          "assets/jsx-runtime-tmpA0a8I.js"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:45.505Z-poids-overlay-b-react",
+      "framework": "react",
+      "mesure": "poids-overlay-b",
+      "valeur": 61.61,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:45.505Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-b.html",
+          "assets/overlay-b-B8jNGAe9.js",
+          "assets/overlay-rpyLjfyP.css",
+          "assets/Alerte-ByBjX7is.js",
+          "assets/jsx-runtime-tmpA0a8I.js"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:45.580Z-poids-overlay-3d-react",
+      "framework": "react",
+      "mesure": "poids-overlay-3d",
+      "valeur": 318.06,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:45.580Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-3d.html",
+          "assets/overlay-3d-Bp9v_-Hv.js",
+          "assets/overlay-3d-CZDdpjEE.css",
+          "assets/overlay-rpyLjfyP.css",
+          "assets/jsx-runtime-tmpA0a8I.js"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:47.673Z-lignes-react",
+      "framework": "react",
+      "mesure": "lignes",
+      "valeur": 565,
+      "unite": "lignes",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:47.673Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "parLangage": {
+          "TypeScript": 410,
+          "CSS": 155
+        },
+        "fichiers": 17
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:48.601Z-poids-dashboard-vue",
+      "framework": "vue",
+      "mesure": "poids-dashboard",
+      "valeur": 30.69,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:48.601Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "dashboard.html",
+          "assets/dashboard-srfh4QlJ.js",
+          "assets/dashboard-q9AJPHH2.css",
+          "assets/connexion-CFouQ73y.js"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:48.664Z-poids-overlay-a-vue",
+      "framework": "vue",
+      "mesure": "poids-overlay-a",
+      "valeur": 30.55,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:48.664Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-a.html",
+          "assets/overlay-a-BzBKVhta.js",
+          "assets/useAlerte-C_TzHwse.js",
+          "assets/useAlerte-Clwg_DvT.css",
+          "assets/connexion-CFouQ73y.js"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:48.714Z-poids-overlay-b-vue",
+      "framework": "vue",
+      "mesure": "poids-overlay-b",
+      "valeur": 30.52,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:48.714Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-b.html",
+          "assets/overlay-b-CP-AkYcK.js",
+          "assets/useAlerte-C_TzHwse.js",
+          "assets/useAlerte-Clwg_DvT.css",
+          "assets/connexion-CFouQ73y.js"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:48.796Z-poids-overlay-3d-vue",
+      "framework": "vue",
+      "mesure": "poids-overlay-3d",
+      "valeur": 276.86,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:48.796Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-3d.html",
+          "assets/overlay-3d-d7M86ZiO.js",
+          "assets/useAlerte-C_TzHwse.js",
+          "assets/useAlerte-Clwg_DvT.css",
+          "assets/connexion-CFouQ73y.js"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:50.028Z-lignes-vue",
+      "framework": "vue",
+      "mesure": "lignes",
+      "valeur": 470,
+      "unite": "lignes",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:50.028Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "parLangage": {
+          "Vuejs Component": 218,
+          "CSS": 131,
+          "TypeScript": 121
+        },
+        "fichiers": 17
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:50.939Z-poids-dashboard-svelte",
+      "framework": "svelte",
+      "mesure": "poids-dashboard",
+      "valeur": 19.06,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:50.939Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "dashboard.html",
+          "assets/dashboard-DdaZQzIU.js",
+          "assets/dashboard-BBxQp_0l.css",
+          "assets/live.svelte-dYe590E3.js",
+          "assets/live-BaWyJdQq.css"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:50.995Z-poids-overlay-a-svelte",
+      "framework": "svelte",
+      "mesure": "poids-overlay-a",
+      "valeur": 18.64,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:50.995Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-a.html",
+          "assets/overlay-a-IzMivc6n.js",
+          "assets/overlay-a-DnIQIf7E.css",
+          "assets/alerte-BVhH3eQo.js",
+          "assets/live.svelte-dYe590E3.js",
+          "assets/live-BaWyJdQq.css"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:51.046Z-poids-overlay-b-svelte",
+      "framework": "svelte",
+      "mesure": "poids-overlay-b",
+      "valeur": 18.53,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:51.046Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-b.html",
+          "assets/overlay-b-BsipuHle.js",
+          "assets/overlay-b-D4x-iS2f.css",
+          "assets/alerte-BVhH3eQo.js",
+          "assets/live.svelte-dYe590E3.js",
+          "assets/live-BaWyJdQq.css"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:51.112Z-poids-overlay-3d-svelte",
+      "framework": "svelte",
+      "mesure": "poids-overlay-3d",
+      "valeur": 219.69,
+      "unite": "Ko",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:51.112Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "differeKo": 0,
+        "fichiers": [
+          "overlay-3d.html",
+          "assets/overlay-3d-BkybCoG_.js",
+          "assets/overlay-3d-C7OQtLMN.css",
+          "assets/live.svelte-dYe590E3.js",
+          "assets/live-BaWyJdQq.css"
+        ],
+        "differes": []
+      }
+    },
+    {
+      "id": "2026-10-29T01:10:52.346Z-lignes-svelte",
+      "framework": "svelte",
+      "mesure": "lignes",
+      "valeur": 420,
+      "unite": "lignes",
+      "valide": true,
+      "horodatage": "2026-10-29T01:10:52.346Z",
+      "conditions": {
+        "commit": "f872fee"
+      },
+      "details": {
+        "parLangage": {
+          "Svelte": 314,
+          "TypeScript": 99,
+          "CSS": 7
+        },
+        "fichiers": 14
+      }
+    },
+    {
+      "id": "2026-10-29T01:21:36.768Z-cpu-reference-reference",
+      "framework": "reference",
+      "mesure": "cpu-reference",
+      "valeur": 0.72,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:21:36.768Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 2.25,
+        "echantillons": 60
+      }
+    },
+    {
+      "id": "2026-10-29T01:21:36.839Z-gpu-reference-reference",
+      "framework": "reference",
+      "mesure": "gpu-reference",
+      "valeur": 1.37,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:21:36.839Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 3,
+        "echantillons": 60
+      }
+    },
+    {
+      "id": "2026-10-29T01:26:03.850Z-cpu-repos-react",
+      "framework": "react",
+      "mesure": "cpu-repos",
+      "valeur": 0.84,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:26:03.850Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 2.83,
+        "echantillons": 60
+      },
+      "net": 0.12
+    },
+    {
+      "id": "2026-10-29T01:26:03.920Z-gpu-repos-react",
+      "framework": "react",
+      "mesure": "gpu-repos",
+      "valeur": 3.13,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:26:03.920Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 4,
+        "echantillons": 60
+      },
+      "net": 1.76
+    },
+    {
+      "id": "2026-10-29T01:26:43.170Z-cpu-alertes-react",
+      "framework": "react",
+      "mesure": "cpu-alertes",
+      "valeur": 2.4,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:26:43.170Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 30
+      },
+      "details": {
+        "max": 7,
+        "echantillons": 30
+      },
+      "net": 1.68
+    },
+    {
+      "id": "2026-10-29T01:26:43.243Z-gpu-alertes-react",
+      "framework": "react",
+      "mesure": "gpu-alertes",
+      "valeur": 6.3,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:26:43.243Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 30
+      },
+      "details": {
+        "max": 11,
+        "echantillons": 30
+      },
+      "net": 4.93
+    },
+    {
+      "id": "2026-10-29T01:27:12.962Z-latence-mediane-react",
+      "framework": "react",
+      "mesure": "latence-mediane",
+      "valeur": 26.04,
+      "unite": "ms",
+      "valide": true,
+      "horodatage": "2026-10-29T01:27:12.962Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30,
+        "count": 200,
+        "interval": 100
+      },
+      "details": {
+        "parOverlay": {
+          "overlay-a": {
+            "mediane": 30.24,
+            "p95": 55.7,
+            "recus": 133,
+            "attendus": 133,
+            "perte": 0
+          },
+          "overlay-b": {
+            "mediane": 15.06,
+            "p95": 31.19,
+            "recus": 67,
+            "attendus": 67,
+            "perte": 0
+          }
+        },
+        "perte": 0,
+        "echantillons": 200
+      }
+    },
+    {
+      "id": "2026-10-29T01:27:13.036Z-latence-p95-react",
+      "framework": "react",
+      "mesure": "latence-p95",
+      "valeur": 54.53,
+      "unite": "ms",
+      "valide": true,
+      "horodatage": "2026-10-29T01:27:13.036Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30,
+        "count": 200,
+        "interval": 100
+      },
+      "details": {
+        "parOverlay": {
+          "overlay-a": {
+            "mediane": 30.24,
+            "p95": 55.7,
+            "recus": 133,
+            "attendus": 133,
+            "perte": 0
+          },
+          "overlay-b": {
+            "mediane": 15.06,
+            "p95": 31.19,
+            "recus": 67,
+            "attendus": 67,
+            "perte": 0
+          }
+        },
+        "perte": 0,
+        "echantillons": 200
+      }
+    },
+    {
+      "id": "2026-10-29T01:28:47.922Z-cpu-3d-react",
+      "framework": "react",
+      "mesure": "cpu-3d",
+      "valeur": 1.88,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:28:47.922Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 4.5,
+        "echantillons": 60
+      },
+      "net": 1.16
+    },
+    {
+      "id": "2026-10-29T01:28:47.998Z-gpu-3d-react",
+      "framework": "react",
+      "mesure": "gpu-3d",
+      "valeur": 9.73,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:28:47.998Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 12,
+        "echantillons": 60
+      },
+      "net": 8.36
+    },
+    {
+      "id": "2026-10-29T01:30:15.395Z-fps-min-react",
+      "framework": "react",
+      "mesure": "fps-min",
+      "valeur": 30,
+      "unite": "fps",
+      "valide": true,
+      "horodatage": "2026-10-29T01:30:15.395Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30
+      },
+      "details": {
+        "plafond": 30,
+        "ratio": 1,
+        "echantillons": 58
+      }
+    },
+    {
+      "id": "2026-10-29T01:30:15.468Z-fps-moyen-react",
+      "framework": "react",
+      "mesure": "fps-moyen",
+      "valeur": 30,
+      "unite": "fps",
+      "valide": true,
+      "horodatage": "2026-10-29T01:30:15.468Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30
+      },
+      "details": {
+        "plafond": 30,
+        "ratio": 1,
+        "echantillons": 58
+      }
+    },
+    {
+      "id": "2026-10-29T01:33:12.246Z-cpu-repos-vue",
+      "framework": "vue",
+      "mesure": "cpu-repos",
+      "valeur": 0.87,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:33:12.246Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 2.33,
+        "echantillons": 60
+      },
+      "net": 0.15
+    },
+    {
+      "id": "2026-10-29T01:33:12.321Z-gpu-repos-vue",
+      "framework": "vue",
+      "mesure": "gpu-repos",
+      "valeur": 3.08,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:33:12.321Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 5,
+        "echantillons": 60
+      },
+      "net": 1.71
+    },
+    {
+      "id": "2026-10-29T01:33:50.368Z-cpu-alertes-vue",
+      "framework": "vue",
+      "mesure": "cpu-alertes",
+      "valeur": 1.82,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:33:50.368Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 30
+      },
+      "details": {
+        "max": 6.83,
+        "echantillons": 30
+      },
+      "net": 1.1
+    },
+    {
+      "id": "2026-10-29T01:33:50.441Z-gpu-alertes-vue",
+      "framework": "vue",
+      "mesure": "gpu-alertes",
+      "valeur": 8.47,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:33:50.441Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 30
+      },
+      "details": {
+        "max": 13,
+        "echantillons": 30
+      },
+      "net": 7.1
+    },
+    {
+      "id": "2026-10-29T01:34:19.525Z-latence-mediane-vue",
+      "framework": "vue",
+      "mesure": "latence-mediane",
+      "valeur": 26.45,
+      "unite": "ms",
+      "valide": true,
+      "horodatage": "2026-10-29T01:34:19.525Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30,
+        "count": 200,
+        "interval": 100
+      },
+      "details": {
+        "parOverlay": {
+          "overlay-a": {
+            "mediane": 31.71,
+            "p95": 57.01,
+            "recus": 133,
+            "attendus": 133,
+            "perte": 0
+          },
+          "overlay-b": {
+            "mediane": 18.03,
+            "p95": 33.48,
+            "recus": 67,
+            "attendus": 67,
+            "perte": 0
+          }
+        },
+        "perte": 0,
+        "echantillons": 200
+      }
+    },
+    {
+      "id": "2026-10-29T01:34:19.594Z-latence-p95-vue",
+      "framework": "vue",
+      "mesure": "latence-p95",
+      "valeur": 55.68,
+      "unite": "ms",
+      "valide": true,
+      "horodatage": "2026-10-29T01:34:19.594Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30,
+        "count": 200,
+        "interval": 100
+      },
+      "details": {
+        "parOverlay": {
+          "overlay-a": {
+            "mediane": 31.71,
+            "p95": 57.01,
+            "recus": 133,
+            "attendus": 133,
+            "perte": 0
+          },
+          "overlay-b": {
+            "mediane": 18.03,
+            "p95": 33.48,
+            "recus": 67,
+            "attendus": 67,
+            "perte": 0
+          }
+        },
+        "perte": 0,
+        "echantillons": 200
+      }
+    },
+    {
+      "id": "2026-10-29T01:36:23.337Z-cpu-3d-vue",
+      "framework": "vue",
+      "mesure": "cpu-3d",
+      "valeur": 2.11,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:36:23.337Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 5.08,
+        "echantillons": 60
+      },
+      "net": 1.39
+    },
+    {
+      "id": "2026-10-29T01:36:23.412Z-gpu-3d-vue",
+      "framework": "vue",
+      "mesure": "gpu-3d",
+      "valeur": 9.57,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:36:23.412Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 13,
+        "echantillons": 60
+      },
+      "net": 8.2
+    },
+    {
+      "id": "2026-10-29T01:37:53.547Z-fps-min-vue",
+      "framework": "vue",
+      "mesure": "fps-min",
+      "valeur": 30,
+      "unite": "fps",
+      "valide": true,
+      "horodatage": "2026-10-29T01:37:53.547Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30
+      },
+      "details": {
+        "plafond": 30,
+        "ratio": 1,
+        "echantillons": 59
+      }
+    },
+    {
+      "id": "2026-10-29T01:37:53.618Z-fps-moyen-vue",
+      "framework": "vue",
+      "mesure": "fps-moyen",
+      "valeur": 30,
+      "unite": "fps",
+      "valide": true,
+      "horodatage": "2026-10-29T01:37:53.618Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30
+      },
+      "details": {
+        "plafond": 30,
+        "ratio": 1,
+        "echantillons": 59
+      }
+    },
+    {
+      "id": "2026-10-29T01:40:38.131Z-cpu-repos-svelte",
+      "framework": "svelte",
+      "mesure": "cpu-repos",
+      "valeur": 0.81,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:40:38.131Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 2.25,
+        "echantillons": 60
+      },
+      "net": 0.09
+    },
+    {
+      "id": "2026-10-29T01:40:38.205Z-gpu-repos-svelte",
+      "framework": "svelte",
+      "mesure": "gpu-repos",
+      "valeur": 2.43,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:40:38.205Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 4,
+        "echantillons": 60
+      },
+      "net": 1.06
+    },
+    {
+      "id": "2026-10-29T01:41:16.532Z-cpu-alertes-svelte",
+      "framework": "svelte",
+      "mesure": "cpu-alertes",
+      "valeur": 1.71,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:41:16.532Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 30
+      },
+      "details": {
+        "max": 5.5,
+        "echantillons": 30
+      },
+      "net": 0.99
+    },
+    {
+      "id": "2026-10-29T01:41:16.604Z-gpu-alertes-svelte",
+      "framework": "svelte",
+      "mesure": "gpu-alertes",
+      "valeur": 4.9,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:41:16.604Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 30
+      },
+      "details": {
+        "max": 8,
+        "echantillons": 30
+      },
+      "net": 3.53
+    },
+    {
+      "id": "2026-10-29T01:41:45.759Z-latence-mediane-svelte",
+      "framework": "svelte",
+      "mesure": "latence-mediane",
+      "valeur": 26.87,
+      "unite": "ms",
+      "valide": true,
+      "horodatage": "2026-10-29T01:41:45.759Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30,
+        "count": 200,
+        "interval": 100
+      },
+      "details": {
+        "parOverlay": {
+          "overlay-a": {
+            "mediane": 31.17,
+            "p95": 56.22,
+            "recus": 133,
+            "attendus": 133,
+            "perte": 0
+          },
+          "overlay-b": {
+            "mediane": 19.76,
+            "p95": 33.27,
+            "recus": 67,
+            "attendus": 67,
+            "perte": 0
+          }
+        },
+        "perte": 0,
+        "echantillons": 200
+      }
+    },
+    {
+      "id": "2026-10-29T01:41:45.832Z-latence-p95-svelte",
+      "framework": "svelte",
+      "mesure": "latence-p95",
+      "valeur": 54.64,
+      "unite": "ms",
+      "valide": true,
+      "horodatage": "2026-10-29T01:41:45.832Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30,
+        "count": 200,
+        "interval": 100
+      },
+      "details": {
+        "parOverlay": {
+          "overlay-a": {
+            "mediane": 31.17,
+            "p95": 56.22,
+            "recus": 133,
+            "attendus": 133,
+            "perte": 0
+          },
+          "overlay-b": {
+            "mediane": 19.76,
+            "p95": 33.27,
+            "recus": 67,
+            "attendus": 67,
+            "perte": 0
+          }
+        },
+        "perte": 0,
+        "echantillons": 200
+      }
+    },
+    {
+      "id": "2026-10-29T01:43:14.706Z-cpu-3d-svelte",
+      "framework": "svelte",
+      "mesure": "cpu-3d",
+      "valeur": 2,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:43:14.706Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 3.67,
+        "echantillons": 60
+      },
+      "net": 1.28
+    },
+    {
+      "id": "2026-10-29T01:43:14.775Z-gpu-3d-svelte",
+      "framework": "svelte",
+      "mesure": "gpu-3d",
+      "valeur": 9.62,
+      "unite": "%",
+      "valide": true,
+      "horodatage": "2026-10-29T01:43:14.775Z",
+      "conditions": {
+        "commit": "f872fee",
+        "coeursLogiques": 12,
+        "accelerationMaterielle": "on",
+        "obsFps": 30,
+        "dureeS": 60
+      },
+      "details": {
+        "max": 12,
+        "echantillons": 60
+      },
+      "net": 8.25
+    },
+    {
+      "id": "2026-10-29T01:44:55.230Z-fps-min-svelte",
+      "framework": "svelte",
+      "mesure": "fps-min",
+      "valeur": 30,
+      "unite": "fps",
+      "valide": true,
+      "horodatage": "2026-10-29T01:44:55.230Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30
+      },
+      "details": {
+        "plafond": 30,
+        "ratio": 1,
+        "echantillons": 59
+      }
+    },
+    {
+      "id": "2026-10-29T01:44:55.305Z-fps-moyen-svelte",
+      "framework": "svelte",
+      "mesure": "fps-moyen",
+      "valeur": 30,
+      "unite": "fps",
+      "valide": true,
+      "horodatage": "2026-10-29T01:44:55.305Z",
+      "conditions": {
+        "commit": "f872fee",
+        "obsFps": 30
+      },
+      "details": {
+        "plafond": 30,
+        "ratio": 1,
+        "echantillons": 59
+      }
     }
   ]
 }

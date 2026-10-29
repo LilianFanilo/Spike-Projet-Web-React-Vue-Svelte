@@ -46,3 +46,5 @@ Vérification prévue en R5 : Cientos (`useGLTF`, via `useAsyncState`) ne lève 
 - **Avertissement de taille du chunk 3D** (948 Ko, 255 Ko gzip) : il est signalé par Vite et laissé tel quel, car la constitution VI exclut toute optimisation au-delà des réglages par défaut.
 
 ## Ressenti (/5)
+
+Non noté : l'étape du ressenti a été supprimée le 2026-10-29 (décision de Lilian). Les critères concernés du barème sont calculés sur leurs sous-mesures objectives (voir `recommandation.md`).

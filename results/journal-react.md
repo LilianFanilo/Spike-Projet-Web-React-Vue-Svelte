@@ -43,8 +43,4 @@ Passages avant le vert : **2**
 
 ## Ressenti (/5)
 
-| Domaine | Note | Commentaire |
-| --- | --- | --- |
-| Dashboard | | |
-| Overlays 2D | | |
-| 3D | | |
+Non noté : l'étape du ressenti a été supprimée le 2026-10-29 (décision de Lilian). Les critères concernés du barème sont calculés sur leurs sous-mesures objectives (voir `recommandation.md`).
