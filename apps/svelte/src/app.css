@@ -1,0 +1,9 @@
+/* Styles communs aux quatre pages. Les styles propres à une page sont dans son composant. */
+
+html,
+body {
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+  font-family: system-ui, "Segoe UI", sans-serif;
+}
