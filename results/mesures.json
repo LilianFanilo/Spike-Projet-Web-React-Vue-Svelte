@@ -840,6 +840,59 @@
           "sans-3d"
         ]
       }
+    },
+    {
+      "id": "2026-10-27T21:59:13.254Z-e2e-vue",
+      "framework": "vue",
+      "mesure": "e2e",
+      "valeur": 34,
+      "unite": "tests",
+      "valide": true,
+      "horodatage": "2026-10-27T21:59:13.254Z",
+      "conditions": {
+        "commit": "b07f4de",
+        "navigateur": "chromium (Playwright)",
+        "appUrl": "http://localhost:4174"
+      },
+      "details": {
+        "echoues": 0,
+        "listeEchecs": [],
+        "manuels": [
+          {
+            "id": "SC-002",
+            "raison": "Découverte du dashboard en moins d'une minute : test utilisateur"
+          },
+          {
+            "id": "US2-4 (rendu)",
+            "raison": "Grossissement ×1,15 et flash : seule la durée est observée automatiquement"
+          },
+          {
+            "id": "US2-7 (OBS)",
+            "raison": "Transparence réelle au-dessus de la vidéo dans OBS"
+          },
+          {
+            "id": "US3-1 (rendu)",
+            "raison": "Rotation continue visible du modèle"
+          },
+          {
+            "id": "US3-2 (rendu)",
+            "raison": "Teinte visible du modèle"
+          },
+          {
+            "id": "US3-3 (rendu)",
+            "raison": "Vitesse de rotation perçue"
+          },
+          {
+            "id": "US3-4 (rendu)",
+            "raison": "Saut de 0,5 unité et 2 tours visibles"
+          }
+        ],
+        "dureeMs": 33155,
+        "projets": [
+          "standard",
+          "sans-3d"
+        ]
+      }
     }
   ]
 }
