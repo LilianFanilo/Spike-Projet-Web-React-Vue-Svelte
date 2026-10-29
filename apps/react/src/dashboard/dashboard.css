@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  background: #f4f5f7;
+  color: #1c1f24;
+  font-family: system-ui, sans-serif;
+}
+
+.dashboard {
+  max-width: 480px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.statut {
+  margin: 0 0 20px;
+  font-weight: 600;
+}
+
+.statut.on {
+  color: #1a7f37;
+}
+
+.statut.off {
+  color: #c62828;
+}
+
+.champs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.champ {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.champ input[type="text"],
+.champ input[type="number"] {
+  padding: 6px 8px;
+  font-size: 16px;
+}
+
+.champ input[type="checkbox"],
+.champ input[type="color"] {
+  align-self: flex-start;
+}
+
+button[data-action="alerte"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background: #d32f2f;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}

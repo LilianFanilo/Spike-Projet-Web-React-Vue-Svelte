@@ -731,6 +731,115 @@
         "ratio": 1,
         "echantillons": 58
       }
+    },
+    {
+      "id": "2026-10-27T21:13:26.388Z-e2e-react",
+      "framework": "react",
+      "mesure": "e2e",
+      "valeur": 32,
+      "unite": "tests",
+      "valide": true,
+      "horodatage": "2026-10-27T21:13:26.388Z",
+      "conditions": {
+        "commit": "b07f4de",
+        "navigateur": "chromium (Playwright)",
+        "appUrl": "http://localhost:4173"
+      },
+      "details": {
+        "echoues": 2,
+        "listeEchecs": [
+          "[standard] US1-2 chaque modification est diffusée immédiatement",
+          "[standard] US3-6 le compteur FPS n'apparaît qu'avec ?debug=1 et remonte au service"
+        ],
+        "manuels": [
+          {
+            "id": "SC-002",
+            "raison": "Découverte du dashboard en moins d'une minute : test utilisateur"
+          },
+          {
+            "id": "US2-4 (rendu)",
+            "raison": "Grossissement ×1,15 et flash : seule la durée est observée automatiquement"
+          },
+          {
+            "id": "US2-7 (OBS)",
+            "raison": "Transparence réelle au-dessus de la vidéo dans OBS"
+          },
+          {
+            "id": "US3-1 (rendu)",
+            "raison": "Rotation continue visible du modèle"
+          },
+          {
+            "id": "US3-2 (rendu)",
+            "raison": "Teinte visible du modèle"
+          },
+          {
+            "id": "US3-3 (rendu)",
+            "raison": "Vitesse de rotation perçue"
+          },
+          {
+            "id": "US3-4 (rendu)",
+            "raison": "Saut de 0,5 unité et 2 tours visibles"
+          }
+        ],
+        "dureeMs": 38176,
+        "projets": [
+          "standard",
+          "sans-3d"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-27T21:20:37.919Z-e2e-react",
+      "framework": "react",
+      "mesure": "e2e",
+      "valeur": 34,
+      "unite": "tests",
+      "valide": true,
+      "horodatage": "2026-10-27T21:20:37.919Z",
+      "conditions": {
+        "commit": "b07f4de",
+        "navigateur": "chromium (Playwright)",
+        "appUrl": "http://localhost:4173"
+      },
+      "details": {
+        "echoues": 0,
+        "listeEchecs": [],
+        "manuels": [
+          {
+            "id": "SC-002",
+            "raison": "Découverte du dashboard en moins d'une minute : test utilisateur"
+          },
+          {
+            "id": "US2-4 (rendu)",
+            "raison": "Grossissement ×1,15 et flash : seule la durée est observée automatiquement"
+          },
+          {
+            "id": "US2-7 (OBS)",
+            "raison": "Transparence réelle au-dessus de la vidéo dans OBS"
+          },
+          {
+            "id": "US3-1 (rendu)",
+            "raison": "Rotation continue visible du modèle"
+          },
+          {
+            "id": "US3-2 (rendu)",
+            "raison": "Teinte visible du modèle"
+          },
+          {
+            "id": "US3-3 (rendu)",
+            "raison": "Vitesse de rotation perçue"
+          },
+          {
+            "id": "US3-4 (rendu)",
+            "raison": "Saut de 0,5 unité et 2 tours visibles"
+          }
+        ],
+        "dureeMs": 33268,
+        "projets": [
+          "standard",
+          "sans-3d"
+        ]
+      }
     }
   ]
 }
